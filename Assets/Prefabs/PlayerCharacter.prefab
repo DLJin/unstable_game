@@ -98,10 +98,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3265e23ad6be344b7f516ec4821b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
-  attackSpeed: 3
   projectile: {fileID: 5103424073891798958, guid: c94a3af4485fa734682f3c4273deb9dd, type: 3}
   projectileSpeed: 20
+  attackSpeed: 5
+  baseAttackSpeed: 5
+  movementSpeed: 5
+  baseMovementSpeed: 5
+  maxHealth: 10
+  currHealth: 10
+  timeSinceLastRandomPower: 0
+  nextPowerTime: 5
+  nextPowerTimeRange: 5
+  nextPowerTimeMin: 5
+  maxPower: 5
+  currPower: 0
+  powerScale: 2
 --- !u!58 &6252030005924609397
 CircleCollider2D:
   m_ObjectHideFlags: 0
