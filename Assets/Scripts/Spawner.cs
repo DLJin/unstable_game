@@ -11,9 +11,11 @@ public class Spawner : MonoBehaviour
         public Enemy.MovePattern movePattern;
         [Range(0, 101)]
         public int percentage;
+        public int minSpeed, maxSpeed;
     }
 
     public int verticalRange = 5;
+    [Tooltip("Note: Percentages must sum to 100")]
     public EnemyDistribution[] enemies;
 
     private Vector3 originalPosition;
@@ -33,8 +35,7 @@ public class Spawner : MonoBehaviour
                 if (enemySelection < totalPercentage) {
                     GameObject go = Instantiate(e.prefab, transform.position, Quaternion.identity);
                     Enemy enemyConfig = go.GetComponent<Enemy>();
-                    enemyConfig.angle = Random.Range(-2, 3) * 15;
-                    enemyConfig.movePattern = e.movePattern;
+                    enemyConfig.InitializeEnemy(movePattern: e.movePattern, angle: Random.Range(-2, 3) * 15, speed: Random.Range(e.minSpeed, e.maxSpeed + 1));
                     break;
                 }
             }

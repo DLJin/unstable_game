@@ -25,7 +25,8 @@ public class Enemy : MonoBehaviour
 
     private void Start() {
         time = 0;
-        setAngle(angle);
+        //setAngle(angle);
+        StartMovement();
     }
 
     private void FixedUpdate() {
@@ -34,6 +35,19 @@ public class Enemy : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, Quaternion.LookRotation(Vector3.forward, new Vector3(Mathf.Cos(time * Mathf.PI * waveSpeed), 1, 0)).eulerAngles.z - angle), Time.fixedDeltaTime * turnSpeed);
             rb.velocity = -1 * transform.right * speed;
         }
+    }
+
+    public void InitializeEnemy(MovePattern movePattern, int angle, float speed) {
+        this.movePattern = movePattern;
+        this.angle = angle;
+        this.speed = speed;
+
+        StartMovement();
+    }
+
+    public void StartMovement() {
+        transform.rotation = Quaternion.Euler(0, 0, -angle);
+        rb.velocity = -1 * transform.right * speed;
     }
 
     public void setAngle(int angle) {
