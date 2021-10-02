@@ -4,12 +4,24 @@ using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour
 {
-    public float movementSpeed = 5.0f;
-    public float attackSpeed = 3.0f;
     public GameObject projectile;
     public float projectileSpeed = 20.0f;
 
     private float timeSinceLastAttack = 0.0f;
+    public float attackSpeed = 5.0f;
+    public float baseAttackSpeed = 5.0f;
+    public float movementSpeed = 5.0f;
+    public float baseMovementSpeed = 5.0f;
+
+    public int maxHealth = 10;
+    public int currHealth = 10;
+    public float timeSinceLastRandomPower = 0.0f;
+    public float nextPowerTime = 5.0f;
+    public float nextPowerTimeRange = 5.0f;
+    public float nextPowerTimeMin = 5.0f;
+    public int maxPower = 5;
+    public int currPower = 0;
+    public float powerScale = 2.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,8 +29,29 @@ public class PlayerCharacter : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void Update() 
+    {
+        attackSpeed = baseAttackSpeed + powerScale*currPower;
+        movementSpeed = baseMovementSpeed + powerScale*currPower;
+
+        if (timeSinceLastRandomPower >= nextPowerTime) {
+            if (currPower >= maxPower) {
+                Debug.Log("Power overload!");
+                currPower = 0;
+            }
+            else {
+                currPower++;
+            }
+            timeSinceLastRandomPower = 0.0f;
+            nextPowerTime = Random.Range(nextPowerTimeMin, nextPowerTimeMin + nextPowerTimeRange);
+        }
+        else {
+            timeSinceLastRandomPower += Time.deltaTime;
+        }
+    }
+
+    // FixedUpdate is called once per physics frame
+    void FixedUpdate()
     {
         calculateMovement();
 
