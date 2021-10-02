@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public enum MovePattern { Straight, Curve, Wave }
-    public int health = 100;
+    public int health = 20;
     public int attack = 5;
     public float speed = 2f;
     [Range(0.25f, 2.5f)]
@@ -50,9 +50,10 @@ public class Enemy : MonoBehaviour
         rb.velocity = -1 * transform.right * speed;
     }
 
-    public void setAngle(int angle) {
-        this.angle = angle;
-        transform.rotation = Quaternion.Euler(0, 0, -angle);
-        rb.velocity = -1 * transform.right * speed;
+    public void TakeDamage(int damage) {
+        health -= damage;
+        if (health <= 0) {
+            Destroy(gameObject);
+        }
     }
 }
