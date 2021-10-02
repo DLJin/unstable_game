@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4624721752416510356}
   - component: {fileID: -3871586317165152384}
   - component: {fileID: 8431988605456804811}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,8 +100,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -145,3 +145,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4595a94b8e9d9449b29d516f4783177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
