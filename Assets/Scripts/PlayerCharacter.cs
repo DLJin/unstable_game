@@ -79,7 +79,7 @@ public class PlayerCharacter : MonoBehaviour
             rb.AddForce(movementSpeed*Time.deltaTime*Vector3.right);
         }
 
-        anim.SetBool("Walking", rb.velocity.magnitude > 0);
+        anim.SetBool("Walking", rb.velocity.magnitude > 0 || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D));
     }
 
     void OnCollisionEnter2D(Collision2D collision) {

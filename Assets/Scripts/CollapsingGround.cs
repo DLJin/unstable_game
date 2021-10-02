@@ -36,18 +36,21 @@ public class CollapsingGround : MonoBehaviour
         }
         if(timer >= lifeTime) {
             GetComponent<Rigidbody2D>().gravityScale = 1;
+            GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if(collision.gameObject.GetComponent<PlayerCharacter>() != null) {
-            startCollapse = true;
+            if (collision.transform.position.y > transform.position.y) {
+                startCollapse = true;
+            }
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision) {
         if (collision.gameObject.GetComponent<PlayerCharacter>() != null) {
-            if (onlyCrackDuringContact) {
+            if (startCollapse && onlyCrackDuringContact) {
                 startCollapse = false;
             }
         }
