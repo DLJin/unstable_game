@@ -23,10 +23,12 @@ public class PlayerCharacter : MonoBehaviour
     public int currPower = 0;
     public float powerScale = 2.0f;
 
+    private Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     void Update() 
@@ -86,6 +88,7 @@ public class PlayerCharacter : MonoBehaviour
         }
 
         rb.velocity = newVelocity;
+        anim.SetBool("Walking", newVelocity.magnitude > 0);
     }
 }
  
