@@ -10,8 +10,8 @@ public class PlayerCharacter : MonoBehaviour
     private float timeSinceLastAttack = 0.0f;
     public float attackSpeed = 5.0f;
     public float baseAttackSpeed = 5.0f;
-    public float movementSpeed = 5.0f;
-    public float baseMovementSpeed = 5.0f;
+    public float movementSpeed = 0.1f;
+    public float baseMovementSpeed = 0.1f;
 
     public int maxHealth = 10;
     public int currHealth = 10;
@@ -24,35 +24,25 @@ public class PlayerCharacter : MonoBehaviour
     public float powerScale = 2.0f;
 
     private Animator anim;
+    public bool onGround = false;
+
+    private float distToGround;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        BoxCollider2D bc = gameObject.GetComponent<BoxCollider2D>();
+        // get the distance to ground
+        distToGround = bc.bounds.extents.y;
+
         anim = GetComponent<Animator>();
     }
-
+    
     void Update() 
     {
-        attackSpeed = baseAttackSpeed + powerScale*currPower;
-        movementSpeed = baseMovementSpeed + powerScale*currPower;
-
-        if (timeSinceLastRandomPower >= nextPowerTime) {
-            if (currPower >= maxPower) {
-                Debug.Log("Power overload!");
-                currPower = 0;
-            }
-            else {
-                currPower++;
-            }
-            timeSinceLastRandomPower = 0.0f;
-            nextPowerTime = Random.Range(nextPowerTimeMin, nextPowerTimeMin + nextPowerTimeRange);
-        }
-        else {
-            timeSinceLastRandomPower += Time.deltaTime;
-        }
+        //onGround = IsGrounded();
     }
-
-    // FixedUpdate is called once per physics frame
     void FixedUpdate()
     {
         calculateMovement();
@@ -69,26 +59,44 @@ public class PlayerCharacter : MonoBehaviour
 
     }
 
+    bool IsGrounded() {
+        Debug.DrawRay(transform.position, -Vector3.up, Color.green);
+        Debug.Log("distToGround: " + distToGround);
+        Debug.Log("transform.position: " + transform.position);
+        return Physics.Raycast(transform.position, -Vector3.up, distToGround + 20.1f);
+    }
+
     void calculateMovement() {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
 
-        Vector3 newVelocity = new Vector3(0, 0);
-
-        if (Input.GetKey(KeyCode.W)) {
-            newVelocity.y = newVelocity.y + movementSpeed;
+        if (Input.GetKey(KeyCode.W) && onGround) {
+            rb.AddForce(10.0f*movementSpeed*Time.deltaTime*Vector3.up);
         }
         if (Input.GetKey(KeyCode.A)) {
-            newVelocity.x = newVelocity.x - movementSpeed;
-        }
-        if (Input.GetKey(KeyCode.S)) {
-            newVelocity.y = newVelocity.y - movementSpeed;
+            rb.AddForce(movementSpeed*Time.deltaTime*Vector3.left);
         }
         if (Input.GetKey(KeyCode.D)) {
-            newVelocity.x = newVelocity.x + movementSpeed;
+            rb.AddForce(movementSpeed*Time.deltaTime*Vector3.right);
         }
 
-        rb.velocity = newVelocity;
-        anim.SetBool("Walking", newVelocity.magnitude > 0);
+        anim.SetBool("Walking", rb.velocity.magnitude > 0);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        Debug.Log("Collision!");
+        if (collision.gameObject.GetComponent<CollapsingGround>() != null &&
+            collision.gameObject.transform.position.y < transform.position.y) {
+                Debug.Log("Collision is with something that has CollapsingGround!");
+                onGround = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision) {
+        Debug.Log("Exit!");
+        if (collision.gameObject.GetComponent<CollapsingGround>() != null) {
+            Debug.Log("Exit is with something that has CollapsingGround!");
+            onGround = false;
+        }
     }
 }
  
