@@ -25,7 +25,7 @@ public class Spawner : MonoBehaviour
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Space) == true) {
+        if (Input.GetKeyDown(KeyCode.RightShift) == true) {
             transform.position = originalPosition + Vector3.up * Random.Range(-verticalRange, verticalRange + 1);
 
             int enemySelection = Random.Range(0, 100);

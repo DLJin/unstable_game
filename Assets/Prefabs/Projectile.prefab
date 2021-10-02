@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4975876090045360592}
   - component: {fileID: 4624721752416510356}
   - component: {fileID: -3871586317165152384}
+  - component: {fileID: 8431988605456804811}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5103424073891798958}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0.7486, y: -0.0781, z: 0}
-  m_LocalScale: {x: 0.1056, y: 0.567, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -132,3 +133,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &8431988605456804811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5103424073891798958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4595a94b8e9d9449b29d516f4783177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

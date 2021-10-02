@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
+  attackSpeed: 3
+  projectile: {fileID: 5103424073891798958, guid: c94a3af4485fa734682f3c4273deb9dd, type: 3}
+  projectileSpeed: 20
 --- !u!58 &6252030005924609397
 CircleCollider2D:
   m_ObjectHideFlags: 0
