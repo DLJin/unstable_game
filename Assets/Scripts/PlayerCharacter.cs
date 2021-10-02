@@ -88,7 +88,7 @@ public class PlayerCharacter : MonoBehaviour
         }
 
         rb.velocity = newVelocity;
-        anim.SetBool("Walking", newVelocity.magnitude > 0);
+        anim.SetBool("Walking", newVelocity.magnitude > 0 || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D));
     }
 }
  

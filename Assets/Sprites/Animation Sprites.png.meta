@@ -10,10 +10,298 @@ TextureImporter:
     second: Animation Sprites_1
   - first:
       213: -8411018638125975345
-    second: Animation Sprites_2
+    second: Walk 1
   - first:
       213: 8116148308408546953
-    second: Animation Sprites_3
+    second: Jump 1
+  - first:
+      213: -4774563810191754260
+    second: Idle 1
+  - first:
+      213: -3969924967608084345
+    second: Animation Sprites_5
+  - first:
+      213: 7267007053935113565
+    second: Animation Sprites_6
+  - first:
+      213: -2812444960043716146
+    second: Walk 2
+  - first:
+      213: -8746971254255709513
+    second: Jump 2
+  - first:
+      213: 6747514436884074291
+    second: Idle 2
+  - first:
+      213: 1772056853398182366
+    second: Walk 3
+  - first:
+      213: -1590978137387700487
+    second: Jump 3
+  - first:
+      213: 1677738409165922219
+    second: Jump 4
+  - first:
+      213: 236444994266931553
+    second: Jump 5
+  - first:
+      213: -3985307059265204707
+    second: Jump 6
+  - first:
+      213: -8675286491435219241
+    second: Animation Sprites_15
+  - first:
+      213: 6766675589978984927
+    second: Animation Sprites_16
+  - first:
+      213: -6926731781394744990
+    second: Animation Sprites_17
+  - first:
+      213: -5423092278502694206
+    second: Animation Sprites_18
+  - first:
+      213: 3868075613432594138
+    second: Animation Sprites_19
+  - first:
+      213: 4722918141119401821
+    second: Animation Sprites_20
+  - first:
+      213: 1194378018136264831
+    second: Animation Sprites_21
+  - first:
+      213: -9003814180567359141
+    second: Animation Sprites_22
+  - first:
+      213: -4110669645155944829
+    second: Animation Sprites_23
+  - first:
+      213: 5315982108404220106
+    second: Animation Sprites_24
+  - first:
+      213: -1061385833845066457
+    second: Animation Sprites_25
+  - first:
+      213: 1386685374969797190
+    second: Animation Sprites_26
+  - first:
+      213: 1407606913142404727
+    second: Animation Sprites_27
+  - first:
+      213: 4810911730833056144
+    second: Animation Sprites_28
+  - first:
+      213: -3111387659380593695
+    second: Animation Sprites_29
+  - first:
+      213: -6411360488987657371
+    second: Animation Sprites_30
+  - first:
+      213: 6280888115771873300
+    second: Animation Sprites_31
+  - first:
+      213: -6442163239890481527
+    second: Animation Sprites_32
+  - first:
+      213: 3563275072187950700
+    second: Animation Sprites_33
+  - first:
+      213: -2307823428389454442
+    second: Animation Sprites_34
+  - first:
+      213: 7335497378849136072
+    second: Animation Sprites_35
+  - first:
+      213: 7636406962149735322
+    second: Animation Sprites_36
+  - first:
+      213: 5618292562873812065
+    second: Animation Sprites_37
+  - first:
+      213: -8124398102881246875
+    second: Animation Sprites_38
+  - first:
+      213: 6747737145205369156
+    second: Animation Sprites_39
+  - first:
+      213: -3233525539066896366
+    second: Animation Sprites_40
+  - first:
+      213: -8773826424636131719
+    second: Animation Sprites_41
+  - first:
+      213: 7748053571073013004
+    second: Animation Sprites_42
+  - first:
+      213: -2400400781930017395
+    second: Animation Sprites_43
+  - first:
+      213: -8886002500916342315
+    second: Animation Sprites_44
+  - first:
+      213: 4501243907811425576
+    second: Animation Sprites_45
+  - first:
+      213: -7046125182163313620
+    second: Animation Sprites_46
+  - first:
+      213: 5173864954312515140
+    second: Animation Sprites_47
+  - first:
+      213: -7902844715177552867
+    second: Animation Sprites_48
+  - first:
+      213: 5624348227882545247
+    second: Animation Sprites_49
+  - first:
+      213: -4661758259299555772
+    second: Animation Sprites_50
+  - first:
+      213: 9221103653021238794
+    second: Animation Sprites_51
+  - first:
+      213: 2670622442602678853
+    second: Animation Sprites_52
+  - first:
+      213: 5762736224137712954
+    second: Animation Sprites_53
+  - first:
+      213: -8583490213525874491
+    second: Animation Sprites_54
+  - first:
+      213: -8064249473403406674
+    second: Animation Sprites_55
+  - first:
+      213: -179339828526179567
+    second: Animation Sprites_56
+  - first:
+      213: -2030262981634570009
+    second: Animation Sprites_57
+  - first:
+      213: 4451594792898975179
+    second: Animation Sprites_58
+  - first:
+      213: 3526411779069798
+    second: Animation Sprites_59
+  - first:
+      213: -4813016952104071281
+    second: Animation Sprites_60
+  - first:
+      213: 7484676010185521999
+    second: Animation Sprites_61
+  - first:
+      213: 3499558537658046875
+    second: Animation Sprites_62
+  - first:
+      213: 2106129757918958772
+    second: Animation Sprites_63
+  - first:
+      213: 2397217151998616360
+    second: Animation Sprites_64
+  - first:
+      213: -1517595056488961587
+    second: Animation Sprites_65
+  - first:
+      213: -9207057450846386281
+    second: Animation Sprites_66
+  - first:
+      213: 3172109100740941435
+    second: Animation Sprites_67
+  - first:
+      213: 5150004383347046527
+    second: Animation Sprites_68
+  - first:
+      213: -1269134557688499196
+    second: Animation Sprites_69
+  - first:
+      213: 4667618817462207401
+    second: Animation Sprites_70
+  - first:
+      213: -1783693676261270082
+    second: Animation Sprites_71
+  - first:
+      213: 1437314456207932577
+    second: Animation Sprites_72
+  - first:
+      213: 4556647585748279966
+    second: Animation Sprites_73
+  - first:
+      213: -1858573710530367049
+    second: Animation Sprites_74
+  - first:
+      213: 8936509786222076410
+    second: Animation Sprites_75
+  - first:
+      213: -8094596073086987585
+    second: Animation Sprites_76
+  - first:
+      213: 5452525641359358355
+    second: Animation Sprites_77
+  - first:
+      213: -5334100367368917285
+    second: Animation Sprites_78
+  - first:
+      213: 1278750004205547863
+    second: Animation Sprites_79
+  - first:
+      213: 4661621238014694525
+    second: Animation Sprites_80
+  - first:
+      213: -3782955976045346572
+    second: Animation Sprites_81
+  - first:
+      213: 5016689551062370955
+    second: Animation Sprites_82
+  - first:
+      213: -8307422387865427190
+    second: Animation Sprites_83
+  - first:
+      213: 5878221542164175028
+    second: Animation Sprites_84
+  - first:
+      213: 3526538814640345508
+    second: Animation Sprites_85
+  - first:
+      213: -3853518059051607660
+    second: Animation Sprites_86
+  - first:
+      213: 802709266193172088
+    second: Animation Sprites_87
+  - first:
+      213: -7751850097353573310
+    second: Animation Sprites_88
+  - first:
+      213: -5519460587266911487
+    second: Animation Sprites_89
+  - first:
+      213: -1078624381999746203
+    second: Animation Sprites_90
+  - first:
+      213: -6643062195221040473
+    second: Animation Sprites_91
+  - first:
+      213: -4958280533160261559
+    second: Animation Sprites_92
+  - first:
+      213: -5300032036857705082
+    second: Animation Sprites_93
+  - first:
+      213: -5866139892104480166
+    second: Animation Sprites_94
+  - first:
+      213: 4752140883563984008
+    second: Animation Sprites_95
+  - first:
+      213: 4490345111518205951
+    second: Animation Sprites_96
+  - first:
+      213: -7028518751114528260
+    second: Animation Sprites_97
+  - first:
+      213: -8137479108316808368
+    second: Animation Sprites_98
+  - first:
+      213: -5230210460134835561
+    second: Animation Sprites_99
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -135,7 +423,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -156,7 +444,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -169,15 +457,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animation Sprites_2
+      name: Walk 1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 800
+        x: 300
+        y: 900
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -190,15 +478,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Animation Sprites_3
+      name: Jump 1
       rect:
         serializedVersion: 2
-        x: 100
-        y: 800
+        x: 400
+        y: 900
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -206,6 +494,237 @@ TextureImporter:
       bones: []
       spriteID: 9863413a2e952a070800000000000000
       internalID: 8116148308408546953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle 1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 900
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cebb518e2875dbdb0800000000000000
+      internalID: -4774563810191754260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78814c8864ef7e8c0800000000000000
+      internalID: -3969924967608084345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Animation Sprites_6
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d557f0ec96899d460800000000000000
+      internalID: 7267007053935113565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk 2
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1b146b53038f8d0800000000000000
+      internalID: -2812444960043716146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump 2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b21989dcf38c9680800000000000000
+      internalID: -8746971254255709513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle 2
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f8b4761acf3ad50800000000000000
+      internalID: 6747514436884074291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk 3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 700
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed95894c15c979810800000000000000
+      internalID: 1772056853398182366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump 3
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 700
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fee79b30d5bbe9e0800000000000000
+      internalID: -1590978137387700487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump 4
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 600
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baf1d50b136884710800000000000000
+      internalID: 1677738409165922219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump 5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 500
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16123343875084300800000000000000
+      internalID: 236444994266931553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump 6
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 400
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1e04ab385851b8c0800000000000000
+      internalID: -3985307059265204707
       vertices: []
       indices: 
       edges: []
