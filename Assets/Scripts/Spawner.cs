@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    [System.Serializable]
+    public struct EnemyDistribution
+    {
+        public GameObject prefab;
+        public Enemy.MovePattern movePattern;
+        [Range(0, 101)]
+        public int percentage;
+    }
+
     public int verticalRange = 5;
-    public GameObject[] enemies;
+    public EnemyDistribution[] enemies;
 
     private Vector3 originalPosition;
 
@@ -16,8 +25,35 @@ public class Spawner : MonoBehaviour
     void Update() {
         if (Input.GetKeyDown(KeyCode.Space) == true) {
             transform.position = originalPosition + Vector3.up * Random.Range(-verticalRange, verticalRange + 1);
-            GameObject go = Instantiate(enemies[Random.Range(0, enemies.Length)], transform.position, Quaternion.identity);
-            go.GetComponent<Enemy>().setAngle(Random.Range(-3, 4) * 15);
+
+            int enemySelection = Random.Range(0, 100);
+            int totalPercentage = 0;
+            foreach(EnemyDistribution e in enemies) {
+                totalPercentage += e.percentage;
+                if (enemySelection < totalPercentage) {
+                    GameObject go = Instantiate(e.prefab, transform.position, Quaternion.identity);
+                    Enemy enemyConfig = go.GetComponent<Enemy>();
+                    enemyConfig.angle = Random.Range(-2, 3) * 15;
+                    enemyConfig.movePattern = e.movePattern;
+                    break;
+                }
+            }
+        }
+    }
+
+    private void OnValidate() {
+        int totalPercentage = 0;
+        foreach(EnemyDistribution e in enemies) {
+            totalPercentage += e.percentage;
+        }
+        if (totalPercentage != 100) {
+            Debug.LogWarning("Resetting enemy distribution percentages.");
+            totalPercentage = 0;
+            for (int i = 0; i < enemies.Length - 1; ++i) {
+                enemies[i].percentage = 100/enemies.Length;
+                totalPercentage += 100 / enemies.Length;
+            }
+            enemies[enemies.Length - 1].percentage = 100 - totalPercentage;
         }
     }
 

@@ -45,4 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   verticalRange: 5
   enemies:
-  - {fileID: 5487012065687608869, guid: 0ca13e99c543b9948a4d14300e8b6e60, type: 3}
+  - prefab: {fileID: 5487012065687608869, guid: 0ca13e99c543b9948a4d14300e8b6e60, type: 3}
+    movePattern: 0
+    percentage: 50
+  - prefab: {fileID: 5487012065687608869, guid: 0ca13e99c543b9948a4d14300e8b6e60, type: 3}
+    movePattern: 2
+    percentage: 50
