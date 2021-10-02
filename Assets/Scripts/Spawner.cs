@@ -14,18 +14,42 @@ public class Spawner : MonoBehaviour
         public int minSpeed, maxSpeed;
     }
 
+    [System.Serializable]
+    public struct ScriptStep
+    {
+        public float timestamp;
+        public int enemyVariant;
+        public float verticalLocation;
+        public int angle;
+        public int speed;
+    }
+
     public int verticalRange = 5;
     [Tooltip("Note: Percentages must sum to 100")]
     public EnemyDistribution[] enemies;
+    public bool scripted;
+    public ScriptStep[] script;
 
     private Vector3 originalPosition;
+    private float currentTime;
+    private int scriptStep;
 
     void Start() {
+        currentTime = 0f;
+        scriptStep = 0;
         originalPosition = transform.position;
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.RightShift) == true) {
+        if (scripted) {
+            for(; scriptStep < script.Length && script[scriptStep].timestamp < currentTime; ++scriptStep) {
+                transform.position = originalPosition + Vector3.up * script[scriptStep].verticalLocation;
+                EnemyDistribution e = enemies[script[scriptStep].enemyVariant];
+                GameObject go = Instantiate(e.prefab, transform.position, Quaternion.identity);
+                Enemy enemyConfig = go.GetComponent<Enemy>();
+                enemyConfig.InitializeEnemy(movePattern: e.movePattern, angle: script[scriptStep].angle, speed: script[scriptStep].speed);
+            }
+        } else if (Input.GetKeyDown(KeyCode.RightShift) == true) {
             transform.position = originalPosition + Vector3.up * Random.Range(-verticalRange, verticalRange + 1);
 
             int enemySelection = Random.Range(0, 100);
@@ -40,6 +64,7 @@ public class Spawner : MonoBehaviour
                 }
             }
         }
+        currentTime += Time.deltaTime;
     }
 
     private void OnValidate() {
@@ -55,6 +80,15 @@ public class Spawner : MonoBehaviour
                 totalPercentage += 100 / enemies.Length;
             }
             enemies[enemies.Length - 1].percentage = 100 - totalPercentage;
+        }
+
+        for(int i = 1; i < script.Length; ++i) {
+            if(script[i].timestamp < script[i-1].timestamp) {
+                Debug.LogError("Timestamp issue with step " + i);
+            }
+            if(script[i].enemyVariant >= enemies.Length) {
+                Debug.LogError("Enemy variant issue with step " + i);
+            }
         }
     }
 
