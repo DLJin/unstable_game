@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CollapsingGround : MonoBehaviour
 {
-
+    public bool isPlatform;
     public Sprite crackedSprite;
+    public GameObject destroyedPlatform;
     [Range(0f, 1f)]
     public float crackThreshold = 0.75f;
     public bool onlyCrackDuringContact = false;
@@ -35,8 +36,12 @@ public class CollapsingGround : MonoBehaviour
             spriteChanged = true;
         }
         if(timer >= lifeTime) {
-            GetComponent<Rigidbody2D>().gravityScale = 1;
-            GetComponent<BoxCollider2D>().enabled = false;
+            if (isPlatform) {
+                Instantiate(destroyedPlatform, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            } else {
+                GetComponent<Rigidbody2D>().gravityScale = 1;
+            }
         }
     }
 

@@ -49,46 +49,46 @@ TextureImporter:
     second: Jump 6
   - first:
       213: -8675286491435219241
-    second: Animation Sprites_15
+    second: Broken Platform 1
   - first:
       213: 6766675589978984927
-    second: Animation Sprites_16
+    second: Broken Platform 2
   - first:
       213: -6926731781394744990
-    second: Animation Sprites_17
+    second: Broken Platform 3
   - first:
       213: -5423092278502694206
-    second: Animation Sprites_18
+    second: Broken Platform 4
   - first:
       213: 3868075613432594138
-    second: Animation Sprites_19
+    second: Broken Platform 5
   - first:
       213: 4722918141119401821
-    second: Animation Sprites_20
+    second: Broken Platform 6
   - first:
       213: 1194378018136264831
     second: Animation Sprites_21
   - first:
       213: -9003814180567359141
-    second: Animation Sprites_22
+    second: Broken Platform 7
   - first:
       213: -4110669645155944829
-    second: Animation Sprites_23
+    second: Broken Platform 8
   - first:
       213: 5315982108404220106
     second: Animation Sprites_24
   - first:
       213: -1061385833845066457
-    second: Animation Sprites_25
+    second: Broken Platform 9
   - first:
       213: 1386685374969797190
-    second: Animation Sprites_26
+    second: Broken Platform 10
   - first:
       213: 1407606913142404727
-    second: Animation Sprites_27
+    second: Broken Platform 11
   - first:
       213: 4810911730833056144
-    second: Animation Sprites_28
+    second: Broken Platform 12
   - first:
       213: -3111387659380593695
     second: Animation Sprites_29
@@ -725,6 +725,258 @@ TextureImporter:
       bones: []
       spriteID: d1e04ab385851b8c0800000000000000
       internalID: -3985307059265204707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken Platform 1
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 625
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6424156e03b9780800000000000000
+      internalID: -8675286491435219241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken Platform 2
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 622
+        width: 60
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd11103099f08ed50800000000000000
+      internalID: 6766675589978984927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken Platform 3
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 531
+        width: 64
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 269be8be42e4fdf90800000000000000
+      internalID: -6926731781394744990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken Platform 4
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 528
+        width: 73
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c2eea33e4e4db4b0800000000000000
+      internalID: -5423092278502694206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken Platform 5
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 431
+        width: 82
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ade3007c64a2ea530800000000000000
+      internalID: 3868075613432594138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken Platform 6
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 442
+        width: 95
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5f8ba8b60d2b8140800000000000000
+      internalID: 4722918141119401821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken Platform 7
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 329
+        width: 70
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5168aff4b60c0380800000000000000
+      internalID: -9003814180567359141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken Platform 8
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 336
+        width: 74
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 386bf7bacb7f3f6c0800000000000000
+      internalID: -4110669645155944829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken Platform 9
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 235
+        width: 75
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 725780425333541f0800000000000000
+      internalID: -1061385833845066457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken Platform 10
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 221
+        width: 67
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64add46600f7e3310800000000000000
+      internalID: 1386685374969797190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken Platform 11
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 126
+        width: 56
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 776bc399703d88310800000000000000
+      internalID: 1407606913142404727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Broken Platform 12
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 126
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 091601adabac3c240800000000000000
+      internalID: 4810911730833056144
       vertices: []
       indices: 
       edges: []
