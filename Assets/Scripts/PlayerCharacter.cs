@@ -15,13 +15,7 @@ public class PlayerCharacter : MonoBehaviour
 
     public int maxHealth = 10;
     public int currHealth = 10;
-    public float timeSinceLastRandomPower = 0.0f;
-    public float nextPowerTime = 5.0f;
-    public float nextPowerTimeRange = 5.0f;
-    public float nextPowerTimeMin = 5.0f;
-    public int maxPower = 5;
-    public int currPower = 0;
-    public float powerScale = 2.0f;
+    public int weaponDamage = 10;
 
     private Animator anim;
     public bool onGround = false;
@@ -50,6 +44,7 @@ public class PlayerCharacter : MonoBehaviour
         if (timeSinceLastAttack > 1.0f/attackSpeed && Input.GetKey(KeyCode.Space)) {
             Quaternion rotation = new Quaternion(0, 0, 90, 90);
             GameObject go = Instantiate(projectile, transform.position, rotation);
+            go.GetComponent<Projectile>().damage = weaponDamage;
             go.GetComponent<Rigidbody2D>().velocity = Vector3.right * projectileSpeed;
             timeSinceLastAttack = 0.0f;
         }
@@ -100,6 +95,18 @@ public class PlayerCharacter : MonoBehaviour
             Debug.Log("Exit is with something that has CollapsingGround!");
             onGround = false;
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.GetComponent<Pickup>() != null) {
+            if (collision.gameObject.GetComponent<Pickup>().type == "weapon") {
+                weaponDamage += 10;
+            }
+            else {
+                Debug.Log("UNKNOWN PICKUP");
+            }
+        }
+
     }
 }
  

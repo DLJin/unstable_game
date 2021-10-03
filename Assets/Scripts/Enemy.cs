@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     public enum MovePattern { Straight, Curve, Wave }
     public int health = 20;
     public int attack = 5;
+    public GameObject weaponUp;
+    public float weaponUpDropRate = 0.1f;
     public float speed = 2f;
     [Range(0.25f, 2.5f)]
     public float waveSpeed = 1.5f;
@@ -53,6 +55,11 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage) {
         health -= damage;
         if (health <= 0) {
+            float rand = Random.Range(0, 1);
+            if (rand < weaponUpDropRate) {
+                Debug.Log("Weapon Up Dropped!");
+                GameObject go = Instantiate(weaponUp, transform.position, Quaternion.identity);
+            }
             Destroy(gameObject);
         }
     }
