@@ -31,6 +31,10 @@ public class Enemy : MonoBehaviour
         StartMovement();
     }
 
+    private void update() {
+        
+    }
+
     private void FixedUpdate() {
         time += Time.fixedDeltaTime;
         if (movePattern == MovePattern.Wave) {
