@@ -51,6 +51,14 @@ public class PlayerCharacter : MonoBehaviour
 
     }
 
+    public void TakeDamage(int dmg = 1) {
+        currHealth = Mathf.Clamp(currHealth - dmg, 0, maxHealth);
+        anim.SetTrigger("Damaged");
+        if (currHealth == 0) {
+            Debug.LogError("Player is dead!");
+            GameManager.PauseGame();
+        }
+    }
 
     void calculateMovement() {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
@@ -69,7 +77,7 @@ public class PlayerCharacter : MonoBehaviour
             rb.velocity = new Vector3(5f, rb.velocity.y);
         }
 
-        anim.SetBool("Walking", rb.velocity.magnitude > 0 || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D));
+        anim.SetFloat("Velocity", rb.velocity.x/4f + 1);
     }
 
     void calculateJumping() {
@@ -78,6 +86,7 @@ public class PlayerCharacter : MonoBehaviour
         // starting to jump
         if (Input.GetKey(KeyCode.W) && onGround && !jumping) {
             jumping = true;
+            anim.SetTrigger("Jumping");
             jumpingCurrentFrameCount = 1;
         }
         else if (jumping) {
@@ -106,7 +115,7 @@ public class PlayerCharacter : MonoBehaviour
                 }
         } else if (collision.gameObject.GetComponent<Enemy>() != null) {
             Destroy(collision.gameObject);
-            currHealth--;
+            TakeDamage();
         }
     }
 
