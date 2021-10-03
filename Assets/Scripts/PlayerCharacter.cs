@@ -10,8 +10,8 @@ public class PlayerCharacter : MonoBehaviour
     private float timeSinceLastAttack = 0.0f;
     public float attackSpeed = 5.0f;
     public float baseAttackSpeed = 5.0f;
-    public float movementSpeed = 0.2f;
-    public float baseMovementSpeed = 0.2f;
+    public float movementSpeed = 0.5f;
+    public float baseMovementSpeed = 0.5f;
 
     public int maxHealth = 10;
     public int currHealth = 10;
@@ -19,17 +19,14 @@ public class PlayerCharacter : MonoBehaviour
 
     private Animator anim;
     public bool onGround = false;
-
-    private float distToGround;
+    public bool jumping = false;
+    public int jumpingFrameCount = 4;
+    public int jumpingCurrentFrameCount = 0;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        BoxCollider2D bc = gameObject.GetComponent<BoxCollider2D>();
-        // get the distance to ground
-        distToGround = bc.bounds.extents.y;
-
         anim = GetComponent<Animator>();
     }
     
@@ -38,6 +35,7 @@ public class PlayerCharacter : MonoBehaviour
     }
     void FixedUpdate()
     {
+        calculateJumping();
         calculateMovement();
 
         if (timeSinceLastAttack > 1.0f/attackSpeed && Input.GetKey(KeyCode.Space)) {
@@ -53,12 +51,10 @@ public class PlayerCharacter : MonoBehaviour
 
     }
 
+
     void calculateMovement() {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-
-        if (Input.GetKey(KeyCode.W) && onGround) {
-            rb.AddForce(10.0f*movementSpeed*Time.deltaTime*Vector3.up);
-        }
+        
         if (Input.GetKey(KeyCode.A)) {
             rb.AddForce(movementSpeed*Time.deltaTime*Vector3.left);
         }
@@ -66,14 +62,36 @@ public class PlayerCharacter : MonoBehaviour
             rb.AddForce(movementSpeed*Time.deltaTime*Vector3.right);
         }
 
-        if (rb.velocity.x < -6f) {
-            rb.velocity = new Vector3(-6f, rb.velocity.y);
+        if (rb.velocity.x < -5f) {
+            rb.velocity = new Vector3(-5f, rb.velocity.y);
         }
-        if (rb.velocity.x > 6f) {
-            rb.velocity = new Vector3(6f, rb.velocity.y);
+        if (rb.velocity.x > 5f) {
+            rb.velocity = new Vector3(5f, rb.velocity.y);
         }
 
         anim.SetBool("Walking", rb.velocity.magnitude > 0 || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D));
+    }
+
+    void calculateJumping() {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
+        // starting to jump
+        if (Input.GetKey(KeyCode.W) && onGround && !jumping) {
+            jumping = true;
+            jumpingCurrentFrameCount = 1;
+        }
+        else if (jumping) {
+            // end of jump
+            if (jumpingCurrentFrameCount > jumpingFrameCount) {
+                jumping = false;
+                jumpingCurrentFrameCount = 0;
+            }
+            // in the middle of jumping
+            if (Input.GetKey(KeyCode.W) && (jumpingCurrentFrameCount == 1 || jumpingCurrentFrameCount == jumpingFrameCount)) {
+                rb.AddForce(1.75f*Time.deltaTime*Vector3.up);
+            }
+            jumpingCurrentFrameCount++;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
