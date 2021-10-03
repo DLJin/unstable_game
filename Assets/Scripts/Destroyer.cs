@@ -8,5 +8,9 @@ public class Destroyer : MonoBehaviour
         if (collision.GetComponent<Enemy>() != null || collision.GetComponent<Projectile>() != null) {
             Destroy(collision.gameObject);
         }
+        if (collision.GetComponent<PlayerCharacter>() != null) {
+            Destroy(collision.gameObject);
+            Time.timeScale = 0;
+        }
     }
 }

@@ -150,4 +150,4 @@ MonoBehaviour:
   destroyedPlatform: {fileID: 0}
   crackThreshold: 0.5
   onlyCrackDuringContact: 0
-  lifeTime: 1.5
+  lifeTime: 0.6

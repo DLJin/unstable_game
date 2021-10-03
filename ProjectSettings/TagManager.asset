@@ -17,8 +17,8 @@ TagManager:
   - Pickups
   - Ground
   - Background
-  - 
-  - 
+  - Wall
+  - No Collisions
   - 
   - 
   - 
