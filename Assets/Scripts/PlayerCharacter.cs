@@ -106,7 +106,7 @@ public class PlayerCharacter : MonoBehaviour
                 }
         } else if (collision.gameObject.GetComponent<Enemy>() != null) {
             Destroy(collision.gameObject);
-            // TODO: Player takes damage here
+            currHealth--;
         }
     }
 

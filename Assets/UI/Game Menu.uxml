@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="styles.uss" />
+    <ui:VisualElement style="flex-grow: 1; flex-direction: row; justify-content: space-between;">
+        <ui:VisualElement style="flex-grow: 0; flex-direction: column; align-items: flex-start;">
+            <ui:VisualElement style="width: 160px; height: 24px; margin-left: 4px; margin-right: 4px; margin-top: 2px; margin-bottom: 2px; background-color: rgb(188, 188, 188); opacity: 0.7; padding-left: 4px; padding-right: 4px; padding-top: 4px; padding-bottom: 4px;">
+                <ui:VisualElement name="player-health" style="background-color: rgb(255, 0, 0); width: 100%; height: 100%; min-width: 0; max-width: 100%;" />
+            </ui:VisualElement>
+            <ui:Label text="Health" display-tooltip-when-elided="true" style="position: absolute; margin-left: 4px; margin-right: 4px; margin-top: 2px; margin-bottom: 2px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; width: 160px; height: 24px; -unity-text-align: middle-center;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="align-items: flex-start; flex-direction: row-reverse;">
+            <ui:Button text="Pause" display-tooltip-when-elided="true" name="pause-button" focusable="false" class="game-menu-button" />
+            <ui:Button text="Mute" display-tooltip-when-elided="true" name="mute-button" focusable="false" class="game-menu-button" style="width: 60px; height: 24px; opacity: 0.7;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

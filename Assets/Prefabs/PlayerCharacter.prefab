@@ -103,12 +103,15 @@ MonoBehaviour:
   projectileSpeed: 20
   attackSpeed: 5
   baseAttackSpeed: 5
-  movementSpeed: 0.1
-  baseMovementSpeed: 0.1
+  movementSpeed: 0.5
+  baseMovementSpeed: 0.5
   maxHealth: 10
   currHealth: 10
   weaponDamage: 10
   onGround: 0
+  jumping: 0
+  jumpingFrameCount: 4
+  jumpingCurrentFrameCount: 0
 --- !u!50 &6252030005924609396
 Rigidbody2D:
   serializedVersion: 4
@@ -125,7 +128,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b743c767e5adec34a85bae1e01796d55, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

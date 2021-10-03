@@ -1,0 +1,37 @@
+.game-menu-button {
+    width: 60px;
+    height: 24px;
+    right: auto;
+    opacity: 0.7;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.game-menu-button:hover {
+    width: 60px;
+    height: 24px;
+    right: auto;
+    opacity: 1;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.game-menu-button:active {
+    width: 60px;
+    height: 24px;
+    right: auto;
+    opacity: 1;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: rgba(133, 27, 255, 255);
+    color: rgba(255, 255, 255, 255);
+}
+
+.unity-progress-bar {
+}

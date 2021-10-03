@@ -10,7 +10,7 @@ public class Destroyer : MonoBehaviour
         }
         if (collision.GetComponent<PlayerCharacter>() != null) {
             Destroy(collision.gameObject);
-            Time.timeScale = 0;
+            GameManager.PauseGame();
         }
     }
 }
