@@ -29,10 +29,15 @@ public class Spawner : MonoBehaviour
     public EnemyDistribution[] enemies;
     public bool scripted;
     public ScriptStep[] script;
+    public bool autoSpawn = false;
+    public float autoSpawnTimer = 0.0f;
+    public float autoSpawnSpeed = 6.0f;
 
     private Vector3 originalPosition;
     private float currentTime;
     private int scriptStep;
+
+    private 
 
     void Start() {
         currentTime = 0f;
@@ -41,6 +46,11 @@ public class Spawner : MonoBehaviour
     }
 
     void Update() {
+        if (Input.GetKeyDown(KeyCode.RightShift) == true) {
+            autoSpawn = !autoSpawn;
+        }
+        autoSpawnTimer += Time.deltaTime;
+
         if (scripted) {
             for(; scriptStep < script.Length && script[scriptStep].timestamp < currentTime; ++scriptStep) {
                 transform.position = originalPosition + Vector3.up * script[scriptStep].verticalLocation;
@@ -49,7 +59,7 @@ public class Spawner : MonoBehaviour
                 Enemy enemyConfig = go.GetComponent<Enemy>();
                 enemyConfig.InitializeEnemy(movePattern: e.movePattern, angle: script[scriptStep].angle, speed: script[scriptStep].speed);
             }
-        } else if (Input.GetKeyDown(KeyCode.RightShift) == true) {
+        } else if (autoSpawn && autoSpawnTimer > 1.0f/autoSpawnSpeed) {
             transform.position = originalPosition + Vector3.up * Random.Range(-verticalRange, verticalRange + 1);
 
             int enemySelection = Random.Range(0, 100);
@@ -63,6 +73,8 @@ public class Spawner : MonoBehaviour
                     break;
                 }
             }
+
+            autoSpawnTimer = 0.0f;
         }
         currentTime += Time.deltaTime;
     }
