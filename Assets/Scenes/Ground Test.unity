@@ -414,6 +414,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 6252030005924609353, guid: 296f2028f53ec8f4c9236e8e6374bb46, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6252030005924609353, guid: 296f2028f53ec8f4c9236e8e6374bb46, type: 3}
+      propertyPath: movementSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6252030005924609353, guid: 296f2028f53ec8f4c9236e8e6374bb46, type: 3}
+      propertyPath: baseMovementSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6252030005924609399, guid: 296f2028f53ec8f4c9236e8e6374bb46, type: 3}
       propertyPath: m_RootOrder
       value: 4

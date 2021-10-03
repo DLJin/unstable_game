@@ -10,8 +10,8 @@ public class PlayerCharacter : MonoBehaviour
     private float timeSinceLastAttack = 0.0f;
     public float attackSpeed = 5.0f;
     public float baseAttackSpeed = 5.0f;
-    public float movementSpeed = 0.1f;
-    public float baseMovementSpeed = 0.1f;
+    public float movementSpeed = 0.2f;
+    public float baseMovementSpeed = 0.2f;
 
     public int maxHealth = 10;
     public int currHealth = 10;
@@ -35,7 +35,6 @@ public class PlayerCharacter : MonoBehaviour
     
     void Update() 
     {
-        //onGround = IsGrounded();
     }
     void FixedUpdate()
     {
@@ -54,13 +53,6 @@ public class PlayerCharacter : MonoBehaviour
 
     }
 
-    bool IsGrounded() {
-        Debug.DrawRay(transform.position, -Vector3.up, Color.green);
-        Debug.Log("distToGround: " + distToGround);
-        Debug.Log("transform.position: " + transform.position);
-        return Physics.Raycast(transform.position, -Vector3.up, distToGround + 20.1f);
-    }
-
     void calculateMovement() {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
 
@@ -74,19 +66,23 @@ public class PlayerCharacter : MonoBehaviour
             rb.AddForce(movementSpeed*Time.deltaTime*Vector3.right);
         }
 
+        if (rb.velocity.x < -6f) {
+            rb.velocity = new Vector3(-6f, rb.velocity.y);
+        }
+        if (rb.velocity.x > 6f) {
+            rb.velocity = new Vector3(6f, rb.velocity.y);
+        }
+
         anim.SetBool("Walking", rb.velocity.magnitude > 0 || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D));
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
         Debug.Log("Collision!");
 
-        if (collision.gameObject.GetComponent<CollapsingGround>() != null &&
-            collision.gameObject.transform.position.y < transform.position.y) {
-                if(collision.contacts.Length > 0)
-                {
-                    ContactPoint2D contact = collision.contacts[0];
-                    if(Vector3.Dot(contact.normal, Vector3.up) > 0.5)
-                    {
+        if (collision.gameObject.GetComponent<CollapsingGround>() != null) {
+                if(collision.contactCount > 0) {
+                    ContactPoint2D contact = collision.GetContact(0);
+                    if(Vector3.Dot(contact.normal, Vector3.up) > 0.5) {
                         onGround = true;
                     }
                 }

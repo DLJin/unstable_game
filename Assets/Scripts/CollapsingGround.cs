@@ -47,8 +47,11 @@ public class CollapsingGround : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if(collision.gameObject.GetComponent<PlayerCharacter>() != null) {
-            if (collision.transform.position.y > transform.position.y) {
-                startCollapse = true;
+            if(collision.contactCount > 0) {
+                ContactPoint2D contact = collision.GetContact(0);
+                if(Vector3.Dot(contact.normal, Vector3.down) > 0.5) {
+                    startCollapse = true;
+                }
             }
         }
     }
