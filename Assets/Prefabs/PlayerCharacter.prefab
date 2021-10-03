@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6252030005924609396}
   - component: {fileID: 1495711909}
   - component: {fileID: 1495711913}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,13 +107,7 @@ MonoBehaviour:
   baseMovementSpeed: 0.1
   maxHealth: 10
   currHealth: 10
-  timeSinceLastRandomPower: 0
-  nextPowerTime: 5
-  nextPowerTimeRange: 5
-  nextPowerTimeMin: 5
-  maxPower: 5
-  currPower: 0
-  powerScale: 2
+  weaponDamage: 10
   onGround: 0
 --- !u!50 &6252030005924609396
 Rigidbody2D:
