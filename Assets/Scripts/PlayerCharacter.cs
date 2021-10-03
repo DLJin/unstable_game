@@ -79,10 +79,17 @@ public class PlayerCharacter : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision) {
         Debug.Log("Collision!");
+
         if (collision.gameObject.GetComponent<CollapsingGround>() != null &&
             collision.gameObject.transform.position.y < transform.position.y) {
-                Debug.Log("Collision is with something that has CollapsingGround!");
-                onGround = true;
+                if(collision.contacts.Length > 0)
+                {
+                    ContactPoint2D contact = collision.contacts[0];
+                    if(Vector3.Dot(contact.normal, Vector3.up) > 0.5)
+                    {
+                        onGround = true;
+                    }
+                }
         } else if (collision.gameObject.GetComponent<Enemy>() != null) {
             Destroy(collision.gameObject);
             // TODO: Player takes damage here
