@@ -88,6 +88,9 @@ public class PlayerCharacter : MonoBehaviour
             collision.gameObject.transform.position.y < transform.position.y) {
                 Debug.Log("Collision is with something that has CollapsingGround!");
                 onGround = true;
+        } else if (collision.gameObject.GetComponent<Enemy>() != null) {
+            Destroy(collision.gameObject);
+            // TODO: Player takes damage here
         }
     }
 
