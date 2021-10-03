@@ -572,15 +572,23 @@ PrefabInstance:
     - target: {fileID: 6252030005924609353, guid: 296f2028f53ec8f4c9236e8e6374bb46, type: 3}
       propertyPath: projectile
       value: 
-      objectReference: {fileID: 5103424073891798958, guid: c94a3af4485fa734682f3c4273deb9dd, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6252030005924609353, guid: 296f2028f53ec8f4c9236e8e6374bb46, type: 3}
       propertyPath: movementSpeed
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6252030005924609353, guid: 296f2028f53ec8f4c9236e8e6374bb46, type: 3}
       propertyPath: baseMovementSpeed
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6252030005924609353, guid: 296f2028f53ec8f4c9236e8e6374bb46, type: 3}
+      propertyPath: jumpingFrameCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6252030005924609396, guid: 296f2028f53ec8f4c9236e8e6374bb46, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: b743c767e5adec34a85bae1e01796d55, type: 2}
     - target: {fileID: 6252030005924609399, guid: 296f2028f53ec8f4c9236e8e6374bb46, type: 3}
       propertyPath: m_RootOrder
       value: 4
