@@ -4,24 +4,25 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    public float scrollSpeed = 4f;
-    public string type = "weapon";
-
-    // Start is called before the first frame update
-    void Start()
+    public enum PowerType
     {
-        
+        Heal, Speed, Frequency
     }
 
-    // Update is called once per frame
+    public PowerType type = PowerType.Heal;
+    public float speedDampening = 0.8f;
+    public float floatSpeed = 0.2f;
+
     void Update()
     {
-        transform.position = transform.position - Vector3.right * Time.deltaTime * scrollSpeed;
+        transform.position = transform.position + Vector3.left * Time.deltaTime * GameManager.groundSpeed * speedDampening + Vector3.down * floatSpeed * Time.deltaTime;
     }
 
     void OnTriggerEnter2D(Collider2D collision) {
         Debug.Log("Pickup Collision!");
-        if (collision.gameObject.GetComponent<PlayerCharacter>() != null) {
+        PlayerCharacter player = collision.gameObject.GetComponent<PlayerCharacter>();
+        if (player != null) {
+            player.applyPowerup(type);
             Destroy(gameObject);
         }
     }

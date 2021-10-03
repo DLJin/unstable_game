@@ -4,18 +4,29 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public enum MovePattern { Straight, Curve, Wave }
+    public enum EnemyType { Normal, Fast, Heavy, Camo, Bomber }
+    public enum MovePattern { Straight, Wave }
+    [System.Serializable]
+    public struct PickupDistribution
+    {
+        public GameObject pickup;
+        [Range(0f, 1f)]
+        public float dropRate;
+    }
+    [Header("Properties")]
+    public EnemyType type;
     public int health = 20;
     public int attack = 5;
-    public GameObject weaponUp;
-    public float weaponUpDropRate = 0.1f;
+    public PickupDistribution[] pickups;
+    [Header("Movement")]
+    public MovePattern movePattern = MovePattern.Straight;
     public float speed = 2f;
+    [Range(-45, 45)]
+    public int angle = 0;
+    [Header("[Wave movement only]")]
     [Range(0.25f, 2.5f)]
     public float waveSpeed = 1.5f;
     public float turnSpeed = 4f;
-    [Range(-45, 45)]
-    public int angle = 0;
-    public MovePattern movePattern = MovePattern.Straight;
 
     private Rigidbody2D rb;
     private float time;
@@ -29,10 +40,6 @@ public class Enemy : MonoBehaviour
         time = 0;
         //setAngle(angle);
         StartMovement();
-    }
-
-    private void update() {
-        
     }
 
     private void FixedUpdate() {
@@ -59,10 +66,17 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage) {
         health -= damage;
         if (health <= 0) {
-            float rand = Random.Range(0, 1);
-            if (rand < weaponUpDropRate) {
-                Debug.Log("Weapon Up Dropped!");
-                GameObject go = Instantiate(weaponUp, transform.position, Quaternion.identity);
+            float dropChance = Random.Range(0f, 1f);
+            float distSum = 0;
+            Debug.Log("Random chance is " + dropChance);
+            foreach(PickupDistribution p in pickups) {
+                if(dropChance <= distSum + p.dropRate) {
+                    Debug.Log("Spawning " + p.pickup.name);
+                    Instantiate(p.pickup, transform.position, Quaternion.identity);
+                    break;
+                }
+                Debug.Log("Skipping " + p.pickup.name);
+                distSum += p.dropRate;
             }
             Destroy(gameObject);
         }

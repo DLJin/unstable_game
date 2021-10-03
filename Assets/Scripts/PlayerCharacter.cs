@@ -12,10 +12,16 @@ public class PlayerCharacter : MonoBehaviour
     public float baseAttackSpeed = 5.0f;
     public float movementSpeed = 0.5f;
     public float baseMovementSpeed = 0.5f;
+    public float maxBaseMovementSpeed = 5f;
 
     public int maxHealth = 10;
     public int currHealth = 10;
     public int weaponDamage = 10;
+
+    public int speedUps = 0;
+    public float speedUpPerLevel = 1f;
+    public int frequencyUps = 0;
+    public float frequencyUpPerLevel = 1f;
 
     private Animator anim;
     public bool onGround = false;
@@ -27,18 +33,22 @@ public class PlayerCharacter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timeSinceLastAttack = 0.0f;
+        currHealth = 10;
+        weaponDamage = 10;
+        speedUps = 0;
+        frequencyUps = 0;
+        onGround = false;
+        jumping = false;
         anim = GetComponent<Animator>();
     }
     
-    void Update() 
-    {
-    }
     void FixedUpdate()
     {
         calculateJumping();
         calculateMovement();
 
-        if (timeSinceLastAttack > 1.0f/attackSpeed && Input.GetKey(KeyCode.Space)) {
+        if (timeSinceLastAttack > 1.0f/(attackSpeed + frequencyUpPerLevel * frequencyUps) && Input.GetKey(KeyCode.Space)) {
             Quaternion rotation = new Quaternion(0, 0, 90, 90);
             GameObject go = Instantiate(projectile, transform.position, rotation);
             go.GetComponent<Projectile>().damage = weaponDamage;
@@ -56,7 +66,7 @@ public class PlayerCharacter : MonoBehaviour
         anim.SetTrigger("Damaged");
         if (currHealth == 0) {
             Debug.LogError("Player is dead!");
-            GameManager.PauseGame();
+            GameManager.EndGame();
         }
     }
 
@@ -70,13 +80,8 @@ public class PlayerCharacter : MonoBehaviour
             rb.AddForce(movementSpeed*Time.deltaTime*Vector3.right);
         }
 
-        if (rb.velocity.x < -5f) {
-            rb.velocity = new Vector3(-5f, rb.velocity.y);
-        }
-        if (rb.velocity.x > 5f) {
-            rb.velocity = new Vector3(5f, rb.velocity.y);
-        }
-
+        float maxMovementSpeed = maxBaseMovementSpeed + speedUps * speedUpPerLevel;
+        rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxMovementSpeed, maxMovementSpeed), rb.velocity.y);
         anim.SetFloat("Velocity", rb.velocity.x/4f + 1);
     }
 
@@ -103,6 +108,40 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
 
+    public void applyPowerup(Pickup.PowerType type) {
+        switch(type) {
+            case Pickup.PowerType.Heal:
+                TakeDamage(-1);
+                break;
+            case Pickup.PowerType.Speed:
+                if(speedUps < 3) {
+                    speedUps++;
+                }
+                break;
+            case Pickup.PowerType.Frequency:
+                if(frequencyUps < 3) {
+                    frequencyUps++;
+                }
+                break;
+        }
+    }
+
+    public void losePowerup(Pickup.PowerType type) {
+        // Todo: Instantiate powerup falling from player or some other visual indicator
+        switch (type) {
+            case Pickup.PowerType.Speed:
+                if(speedUps > 0) {
+                    speedUps--;
+                }
+                break;
+            case Pickup.PowerType.Frequency:
+                if(frequencyUps > 0) {
+                    frequencyUps--;
+                }
+                break;
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision) {
         Debug.Log("Collision!");
 
@@ -125,18 +164,6 @@ public class PlayerCharacter : MonoBehaviour
             Debug.Log("Exit is with something that has CollapsingGround!");
             onGround = false;
         }
-    }
-
-    void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.GetComponent<Pickup>() != null) {
-            if (collision.gameObject.GetComponent<Pickup>().type == "weapon") {
-                weaponDamage += 10;
-            }
-            else {
-                Debug.Log("UNKNOWN PICKUP");
-            }
-        }
-
     }
 }
  

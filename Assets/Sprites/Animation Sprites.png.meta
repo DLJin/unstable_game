@@ -112,13 +112,13 @@ TextureImporter:
     second: Arm
   - first:
       213: 7636406962149735322
-    second: Animation Sprites_36
+    second: Pickup Heal
   - first:
       213: 5618292562873812065
-    second: Animation Sprites_37
+    second: Pickup Speed
   - first:
       213: -8124398102881246875
-    second: Animation Sprites_38
+    second: Pickup Frequency
   - first:
       213: 6747737145205369156
     second: Animation Sprites_39
@@ -1166,6 +1166,69 @@ TextureImporter:
       bones: []
       spriteID: 8cd9c1d300cecc560800000000000000
       internalID: 7335497378849136072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pickup Heal
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 499
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5260718}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9b31433ca7f9f960800000000000000
+      internalID: 7636406962149735322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pickup Speed
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 399
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5373676, y: 0.5373669}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1640056a15f28fd40800000000000000
+      internalID: 5618292562873812065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pickup Frequency
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 299
+        width: 100
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5115912, y: 0.5115912}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 561e7e768f6504f80800000000000000
+      internalID: -8124398102881246875
       vertices: []
       indices: 
       edges: []

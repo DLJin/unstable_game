@@ -85,16 +85,10 @@ public class Spawner : MonoBehaviour
             totalPercentage += e.percentage;
         }
         if (totalPercentage != 100) {
-            Debug.LogWarning("Resetting enemy distribution percentages.");
-            totalPercentage = 0;
-            for (int i = 0; i < enemies.Length - 1; ++i) {
-                enemies[i].percentage = 100/enemies.Length;
-                totalPercentage += 100 / enemies.Length;
-            }
-            enemies[enemies.Length - 1].percentage = 100 - totalPercentage;
+            Debug.LogError("Enemy distribution percentage sum is should be 100. Currently: " + totalPercentage);
         }
 
-        for(int i = 1; i < script.Length; ++i) {
+        for(int i = 1; script != null && i < script.Length; ++i) {
             if(script[i].timestamp < script[i-1].timestamp) {
                 Debug.LogError("Timestamp issue with step " + i);
             }

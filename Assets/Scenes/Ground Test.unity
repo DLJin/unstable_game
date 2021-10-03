@@ -171,6 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 1273337160}
   player: {fileID: 940246070}
+  ground: {fileID: 778789329}
   isMuted: 0
 --- !u!1 &470599066
 GameObject:
@@ -303,14 +304,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -1530545434323613997, guid: b91eecde1d7cffb4785b367dcf6b3b63, type: 3}
-      propertyPath: verticalRange
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: -1530545434323613997, guid: b91eecde1d7cffb4785b367dcf6b3b63, type: 3}
-      propertyPath: autoSpawnSpeed
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3840414093776141074, guid: b91eecde1d7cffb4785b367dcf6b3b63, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -882,7 +875,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1493182968
 PrefabInstance:
@@ -1012,7 +1005,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5161422206787516656, guid: 711586c061433de43afeed7089daaa40, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5161422206787516656, guid: 711586c061433de43afeed7089daaa40, type: 3}
       propertyPath: m_LocalPosition.x

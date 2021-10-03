@@ -7,6 +7,7 @@ public class GroundController : MonoBehaviour
     public Transform spawnPoint;
     public Transform blockParent;
 
+    [HideInInspector]
     public float scrollSpeed = 4f;
     public GameObject[] groundBlocks;
 
