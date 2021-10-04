@@ -56,6 +56,13 @@ public class CollapsingGround : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.GetComponent<BomberProjectile>() != null) {
+            Destroy(collision.gameObject);
+            startCollapse = true;
+        }
+    }
+
     private void OnCollisionExit2D(Collision2D collision) {
         if (collision.gameObject.GetComponent<PlayerCharacter>() != null) {
             if (startCollapse && onlyCrackDuringContact) {
