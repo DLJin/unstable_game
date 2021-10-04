@@ -23,7 +23,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isPaused = false;
+        Time.timeScale = 0;
+        isPaused = true;
         isMuted = false;
         ground.scrollSpeed = groundSpeed;
         SelectNewColor();
