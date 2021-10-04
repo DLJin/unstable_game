@@ -845,6 +845,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5161422206787516657, guid: 711586c061433de43afeed7089daaa40, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161422206787516657, guid: 711586c061433de43afeed7089daaa40, type: 3}
+      propertyPath: currHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161422206787516657, guid: 711586c061433de43afeed7089daaa40, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 192510630}
