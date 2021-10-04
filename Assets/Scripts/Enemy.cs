@@ -13,10 +13,18 @@ public class Enemy : MonoBehaviour
         [Range(0f, 1f)]
         public float dropRate;
     }
+    [Header("Projectile")]
+    public GameObject projectile;
+    public float projectileSpeed = 10.0f;    
+
+    [Header("Attack")]
+    public float attackSpeed = 1f;
+    public int weaponDamage = 1;
+    private float timeSinceLastAttack = 0.0f;
+
     [Header("Properties")]
     public EnemyType type;
     public int health = 20;
-    public int attack = 5;
     public PickupDistribution[] pickups;
     [Header("Movement")]
     public MovePattern movePattern = MovePattern.Straight;
@@ -48,6 +56,9 @@ public class Enemy : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, Quaternion.LookRotation(Vector3.forward, new Vector3(Mathf.Cos(time * Mathf.PI * waveSpeed), 1, 0)).eulerAngles.z - angle), Time.fixedDeltaTime * turnSpeed);
             rb.velocity = -1 * transform.right * speed;
         }
+
+        // shooting logic
+        shoot();
     }
 
     public void InitializeEnemy(MovePattern movePattern, int angle, float speed) {
@@ -61,6 +72,26 @@ public class Enemy : MonoBehaviour
     public void StartMovement() {
         transform.rotation = Quaternion.Euler(0, 0, -angle);
         rb.velocity = -1 * transform.right * speed;
+    }
+
+    public void shoot() {
+        if (type == EnemyType.Normal) {
+            return;
+        }
+        else if (type == EnemyType.Fast) {
+            if (timeSinceLastAttack > 1.0f/(attackSpeed)) {
+                Debug.Log("Poggers");
+                Quaternion rotation = new Quaternion(0, 0, 90, 90);
+                GameObject go = Instantiate(projectile, transform.position, rotation);
+                go.GetComponent<EnemyProjectile>().damage = weaponDamage;
+                go.GetComponent<Rigidbody2D>().velocity = Vector3.left * projectileSpeed;
+                timeSinceLastAttack = 0.0f;
+            }
+            else {
+                Debug.Log("Froggers");
+                timeSinceLastAttack += Time.deltaTime;
+            }
+        }
     }
 
     public void TakeDamage(int damage) {

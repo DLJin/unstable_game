@@ -98,12 +98,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a3abdd4d4c68c45a1095d95bd0bda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 4642259060517795408, guid: cd94907f9d737474dbec051ea07944f0, type: 3}
+  projectileSpeed: 10
+  attackSpeed: 1
+  weaponDamage: 1
   type: 1
   health: 10
-  attack: 1
   pickups: []
   movePattern: 0
-  speed: 5
+  speed: 2
   angle: 0
   waveSpeed: 1.5
   turnSpeed: 4
