@@ -183,7 +183,9 @@ MonoBehaviour:
   - {r: 0.4245283, g: 0.3331092, b: 0.15779635, a: 1}
   - {r: 0.3455398, g: 0.2568886, b: 0.38679248, a: 1}
   colorTransitionTime: 10
-  endingSlowFadeTime: 1
+  timeToSurvive: 10
+  isGameOver: 0
+  endingSlowFadeTime: 0.75
 --- !u!1 &470599066
 GameObject:
   m_ObjectHideFlags: 0

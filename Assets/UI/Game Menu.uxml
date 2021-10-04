@@ -1,35 +1,35 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="styles.uss" />
     <ui:VisualElement style="flex-grow: 1; flex-direction: row; justify-content: space-between; opacity: 1;">
-        <ui:VisualElement style="flex-grow: 0; flex-direction: column; align-items: flex-start;">
-            <ui:VisualElement name="HealthBar" style="width: 160px; height: 24px; margin-left: 4px; margin-right: 4px; margin-top: 2px; margin-bottom: 2px; background-color: rgb(188, 188, 188); opacity: 1; padding-left: 4px; padding-right: 4px; padding-top: 4px; padding-bottom: 4px;">
+        <ui:VisualElement style="flex-grow: 1; flex-direction: column; align-items: flex-start;">
+            <ui:VisualElement name="HealthBar" style="width: 30%; height: 3%; margin-left: 4px; margin-right: 4px; margin-top: 2px; margin-bottom: 2px; background-color: rgb(188, 188, 188); opacity: 1; padding-left: 4px; padding-right: 4px; padding-top: 4px; padding-bottom: 4px;">
                 <ui:VisualElement name="player-health" style="background-color: rgb(18, 188, 0); width: 100%; height: 100%; min-width: 0; max-width: 100%;" />
-                <ui:Label text="Health" display-tooltip-when-elided="true" name="HealthLabel" style="position: absolute; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; width: 160px; height: 24px; -unity-text-align: middle-center; font-size: 11px;" />
+                <ui:Label text="Health" display-tooltip-when-elided="true" name="HealthLabel" style="position: absolute; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; width: 100%; height: 100%; -unity-text-align: middle-center; font-size: 15%; left: 4px; top: 4px;" />
             </ui:VisualElement>
-            <ui:Label text="Powerups" display-tooltip-when-elided="true" name="PowerupLabel" style="width: 160px; height: 16px; -unity-text-align: middle-center; margin-left: 4px; margin-top: 2px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; background-color: rgba(188, 188, 188, 0.38); -unity-font-style: bold;" />
-            <ui:VisualElement name="PowerupBars" style="margin-left: 4px; margin-right: 4px; margin-top: 2px; margin-bottom: 2px; width: 160px; height: 24px; flex-direction: row;">
+            <ui:Label text="Powerups" display-tooltip-when-elided="true" name="PowerupLabel" style="width: 30%; height: auto; -unity-text-align: middle-center; margin-left: 4px; margin-top: 2px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; background-color: rgba(188, 188, 188, 0.38); -unity-font-style: bold;" />
+            <ui:VisualElement name="PowerupBars" style="margin-left: 4px; margin-right: 4px; margin-top: 2px; margin-bottom: 2px; width: 30%; height: 3%; flex-direction: row;">
                 <ui:VisualElement name="SpeedBar" style="flex-grow: 1; margin-left: 0; margin-right: 2px; padding-left: 4px; padding-right: 4px; padding-top: 4px; padding-bottom: 4px; background-color: rgb(188, 188, 188);">
                     <ui:VisualElement name="player-speed" style="background-color: rgb(26, 245, 221); width: 100%; height: 100%;" />
-                    <ui:VisualElement name="DividerLeft" style="position: absolute; width: 2px; height: 24px; top: 0; left: 26px; background-color: rgb(188, 188, 188);" />
-                    <ui:VisualElement name="DividerRight" style="position: absolute; width: 2px; height: 24px; top: 0; left: 50px; background-color: rgb(188, 188, 188);" />
-                    <ui:Label text="Speed" display-tooltip-when-elided="true" name="SpeedLabel" style="width: 70px; height: 20px; -unity-text-align: middle-center; margin-left: 4px; margin-top: 2px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; position: absolute; top: auto; font-size: 12px;" />
+                    <ui:VisualElement name="DividerLeft" style="position: absolute; width: 5px; height: 100%; top: 4px; left: 33.33%; background-color: rgb(188, 188, 188);" />
+                    <ui:VisualElement name="DividerRight" style="position: absolute; width: 5px; height: 100%; top: 4px; left: 66.67%; background-color: rgb(188, 188, 188);" />
+                    <ui:Label text="Speed" display-tooltip-when-elided="true" name="SpeedLabel" style="width: 100%; height: 100%; -unity-text-align: middle-center; margin-left: 4px; margin-top: 2px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; position: absolute; top: 2px; font-size: 12px; align-items: stretch;" />
                 </ui:VisualElement>
                 <ui:VisualElement name="AttackBar" style="flex-grow: 1; margin-left: 2px; padding-left: 4px; padding-right: 4px; padding-top: 4px; padding-bottom: 4px; background-color: rgb(188, 188, 188);">
                     <ui:VisualElement name="player-attack" style="width: 100%; height: 100%; background-color: rgb(245, 173, 26);" />
-                    <ui:VisualElement name="DividerLeft" style="position: absolute; width: 2px; height: 24px; top: 0; left: 26px; background-color: rgb(188, 188, 188);" />
-                    <ui:VisualElement name="DividerRight" style="position: absolute; width: 2px; height: 24px; top: 0; left: 50px; background-color: rgb(188, 188, 188);" />
-                    <ui:Label text="Attack" display-tooltip-when-elided="true" name="AttackLabel" style="width: 70px; height: 20px; -unity-text-align: middle-center; margin-left: 4px; margin-top: 2px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; position: absolute; top: auto; font-size: 12px;" />
+                    <ui:VisualElement name="DividerLeft" style="position: absolute; width: 5px; height: 100%; top: 4px; left: 33.33%; background-color: rgb(188, 188, 188);" />
+                    <ui:VisualElement name="DividerRight" style="position: absolute; width: 5px; height: 100%; top: 4px; left: 66.67%; background-color: rgb(188, 188, 188);" />
+                    <ui:Label text="Attack" display-tooltip-when-elided="true" name="AttackLabel" style="width: 100%; height: 100%; -unity-text-align: middle-center; margin-left: 4px; margin-top: 2px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; position: absolute; top: 2px; font-size: 12px; align-items: stretch;" />
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement style="align-items: flex-start; flex-direction: row-reverse;">
-            <ui:Button text="Pause" display-tooltip-when-elided="true" name="pause-button" focusable="false" class="game-menu-button" style="opacity: 1;" />
-            <ui:Button text="Mute" display-tooltip-when-elided="true" name="mute-button" focusable="false" class="game-menu-button" style="width: 60px; height: 24px; opacity: 1;" />
+        <ui:VisualElement style="align-items: flex-start; flex-direction: row-reverse; flex-grow: 1;">
+            <ui:Button text="Pause" display-tooltip-when-elided="true" name="pause-button" focusable="false" class="game-menu-button" style="opacity: 1; font-size: 16%;" />
+            <ui:Button text="Mute" display-tooltip-when-elided="true" name="mute-button" focusable="false" class="game-menu-button" style="width: auto; height: auto; opacity: 1; font-size: 16%;" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="start-overlay" style="position: absolute; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.77); align-items: center; justify-content: center;">
         <ui:Label text="The space station is on siege from an onslaught of oddly geometrically shaped invaders! Navigate the robot through its collapsing home and defend it against the attackers!" display-tooltip-when-elided="true" name="Synopsis" style="-unity-font-style: normal; font-size: 30%; -unity-text-align: middle-center; flex-wrap: nowrap; width: 60%; white-space: normal;" />
-        <ui:Button text="Beep Boop!" display-tooltip-when-elided="true" name="start-button" class="game-menu-button" style="width: auto;" />
+        <ui:Button text="Beep Boop!" display-tooltip-when-elided="true" name="start-button" class="game-menu-button" style="width: auto; height: auto; font-size: 16%;" />
         <ui:VisualElement>
             <ui:VisualElement style="flex-direction: row; align-items: center; width: 100%; justify-content: space-between;">
                 <ui:VisualElement name="Controls">
@@ -41,17 +41,17 @@
                     <ui:VisualElement style="flex-direction: row;">
                         <ui:VisualElement name="Heal" style="align-items: center; justify-content: flex-start;">
                             <ui:Label text="Health" display-tooltip-when-elided="true" name="Name" style="font-size: 22.5%;" />
-                            <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/Sprites/Animation Sprites.png#Pickup Heal&apos;); width: 32px; height: 32px;" />
+                            <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/Sprites/Animation Sprites.png#Pickup Heal&apos;); width: 64px; height: 64px;" />
                             <ui:Label text="Regain&#10;health" display-tooltip-when-elided="true" name="Description" style="font-size: 20%; -unity-text-align: upper-center;" />
                         </ui:VisualElement>
                         <ui:VisualElement name="Speed" style="align-items: center; justify-content: flex-start;">
                             <ui:Label text="Speed" display-tooltip-when-elided="true" name="Name" style="font-size: 22.5%;" />
-                            <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/Sprites/Animation Sprites.png#Pickup Speed&apos;); width: 32px; height: 32px;" />
+                            <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/Sprites/Animation Sprites.png#Pickup Speed&apos;); width: 64px; height: 64px;" />
                             <ui:Label text="Move&#10;faster" display-tooltip-when-elided="true" name="Description" style="font-size: 20%; -unity-text-align: upper-center;" />
                         </ui:VisualElement>
                         <ui:VisualElement name="Frequency" style="align-items: center; justify-content: flex-start;">
                             <ui:Label text="Attack" display-tooltip-when-elided="true" name="Name" style="font-size: 22.5%;" />
-                            <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/Sprites/Animation Sprites.png#Pickup Frequency&apos;); width: 32px; height: 32px;" />
+                            <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/Sprites/Animation Sprites.png#Pickup Frequency&apos;); width: 64px; height: 64px;" />
                             <ui:Label text="Shoot&#10;faster" display-tooltip-when-elided="true" name="Description" style="font-size: 20%; -unity-text-align: upper-center;" />
                         </ui:VisualElement>
                     </ui:VisualElement>
@@ -62,31 +62,36 @@
                 <ui:VisualElement style="flex-direction: row;">
                     <ui:VisualElement name="NormalEnemy" style="align-items: center; justify-content: flex-start;">
                         <ui:Label text="Basic" display-tooltip-when-elided="true" name="Name" style="font-size: 22.5%;" />
-                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/Sprites/Normal Enemy Sprite.png#Normal Enemy Sprite&apos;); width: 32px; height: 32px;" />
+                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/Sprites/Normal Enemy Sprite.png#Normal Enemy Sprite&apos;); width: 64px; height: 64px;" />
                         <ui:Label text="Normal Speed&#10;Normal Health&#10;No Attack" display-tooltip-when-elided="true" name="Description" style="font-size: 20%;" />
                     </ui:VisualElement>
                     <ui:VisualElement name="FastEnemy" style="align-items: center; justify-content: flex-start;">
                         <ui:Label text="Fast" display-tooltip-when-elided="true" name="Name" style="font-size: 22.5%;" />
-                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/Sprites/Fast Enemy Sprite.png#Fast Enemy Sprite&apos;); width: 32px; height: 32px;" />
+                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/Sprites/Fast Enemy Sprite.png#Fast Enemy Sprite&apos;); width: 64px; height: 64px;" />
                         <ui:Label text="Fast Speed&#10;Low Health&#10;Weak Attack" display-tooltip-when-elided="true" name="Description" style="font-size: 20%;" />
                     </ui:VisualElement>
                     <ui:VisualElement name="HeavyEnemy" style="align-items: center; justify-content: flex-start;">
                         <ui:Label text="Heavy" display-tooltip-when-elided="true" name="Name" style="font-size: 22.5%;" />
-                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/Sprites/Heavy Enemy Sprite.png#Heavy Enemy Sprite&apos;); width: 32px; height: 32px;" />
+                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/Sprites/Heavy Enemy Sprite.png#Heavy Enemy Sprite&apos;); width: 64px; height: 64px;" />
                         <ui:Label text="Slow Speed&#10;High Health&#10;Strong Attack" display-tooltip-when-elided="true" name="Description" style="font-size: 20%;" />
                     </ui:VisualElement>
                     <ui:VisualElement name="CamoEnemy" style="align-items: center; justify-content: flex-start;">
                         <ui:Label text="Camo" display-tooltip-when-elided="true" name="Name" style="font-size: 22.5%;" />
-                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/Sprites/Camo Enemy Sprite.png#Camo Enemy Sprite&apos;); width: 32px; height: 32px;" />
+                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/Sprites/Camo Enemy Sprite.png#Camo Enemy Sprite&apos;); width: 64px; height: 64px;" />
                         <ui:Label text="Normal Speed&#10;Normal Health&#10;No Attack&#10;Difficult to see" display-tooltip-when-elided="true" name="Description" style="font-size: 20%;" />
                     </ui:VisualElement>
                     <ui:VisualElement name="BomberEnemy" style="align-items: center; justify-content: flex-start;">
                         <ui:Label text="Bomber" display-tooltip-when-elided="true" name="Name" style="font-size: 22.5%;" />
-                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/Sprites/Bomber Enemy Sprite.png#Bomber Enemy Sprite&apos;); width: 64px; height: 32px;" />
+                        <ui:VisualElement name="Image" style="background-image: url(&apos;/Assets/Sprites/Bomber Enemy Sprite.png#Bomber Enemy Sprite&apos;); width: 128px; height: 64px;" />
                         <ui:Label text="Slow Speed&#10;Low Health&#10;Strong Attack&#10;Destroys ground" display-tooltip-when-elided="true" name="Description" style="font-size: 20%;" />
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="end-overlay" style="position: absolute; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.5); align-items: center; justify-content: center; display: flex; visibility: hidden;">
+        <ui:Label text="You&apos;ve won/lost! The robot is dead/alive and won&apos;t/will live on to see another day! Condolences/Congratulations!" display-tooltip-when-elided="true" name="flavor-text" style="-unity-font-style: normal; font-size: 30%; -unity-text-align: middle-center; flex-wrap: nowrap; width: 60%; white-space: normal;" />
+        <ui:Button text="Play Again?" display-tooltip-when-elided="true" name="replay-button" class="game-menu-button" style="width: auto; height: auto; font-size: 16%;" />
+        <ui:VisualElement style="background-image: url(&apos;/Assets/Sprites/Animation Sprites.png#Idle 2&apos;); width: 150px; height: 150px;" />
     </ui:VisualElement>
 </ui:UXML>

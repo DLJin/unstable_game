@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     private Color targetColor;
     public float timeToSurvive = 10.0f;
     private bool lost = false;
+    public bool isGameOver;
 
     public float endingSlowFadeTime = 1f;
 
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 0;
+        isGameOver = false;
         isPaused = true;
         isMuted = false;
         ground.scrollSpeed = groundSpeed;
@@ -72,21 +74,24 @@ public class GameManager : MonoBehaviour
     }
 
     public void EndGame(bool winner) {
-        Debug.LogError("Game Over!");
-        if (winner && !lost) {
-            Debug.Log("Player Won!");
-        } else {
-            lost = true;
-            BGM.PlayOneShot(deathNoise);
+        if (!isGameOver) {
+            Debug.LogError("Game Over!");
+            isGameOver = true;
+            if (winner && !lost) {
+                Debug.Log("Player Won!");
+            } else {
+                lost = true;
+                BGM.PlayOneShot(deathNoise);
+            }
+            StartCoroutine(SlowDownTime());
         }
-        StartCoroutine(SlowDownTime());
     }
 
     IEnumerator SlowDownTime() {
         float slowTimer = 0;
         while(slowTimer < endingSlowFadeTime) {
             slowTimer += Time.deltaTime;
-            Time.timeScale = Mathf.Lerp(1, 0.5f, slowTimer / endingSlowFadeTime);
+            Time.timeScale = Mathf.Lerp(1, 0.3f, slowTimer / endingSlowFadeTime);
             yield return null;
         }
         yield return null;
