@@ -11,6 +11,10 @@ public class GameMenuController : MonoBehaviour
     public Button muteButton;
     [HideInInspector]
     public VisualElement playerHealth;
+    [HideInInspector]
+    public VisualElement playerSpeed;
+    [HideInInspector]
+    public VisualElement playerAttack;
 
     public GameManager gameManager;
 
@@ -22,6 +26,8 @@ public class GameMenuController : MonoBehaviour
         pauseButton = root.Q<Button>("pause-button");
         muteButton = root.Q<Button>("mute-button");
         playerHealth = root.Q<VisualElement>("player-health");
+        playerSpeed = root.Q<VisualElement>("player-speed");
+        playerAttack = root.Q<VisualElement>("player-attack");
 
         pauseButton.clicked += TogglePause;
         muteButton.clicked += ToggleMute;
@@ -31,6 +37,8 @@ public class GameMenuController : MonoBehaviour
     void Update()
     {
         playerHealth.style.width = new StyleLength(Length.Percent(100 * Mathf.Clamp01((float) gameManager.player.currHealth / gameManager.player.maxHealth)));
+        playerSpeed.style.width = new StyleLength(Length.Percent(100 * Mathf.Clamp01((float)gameManager.player.speedUps / 3)));
+        playerAttack.style.width = new StyleLength(Length.Percent(100 * Mathf.Clamp01((float)gameManager.player.frequencyUps / 3)));
     }
 
     private void TogglePause() {
