@@ -14,18 +14,39 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public bool isMuted;
 
+    public Color[] bgColors;
+    public float colorTransitionTime;
+    private float colorTimer;
+    private Color originalColor;
+    private Color targetColor;
+
     // Start is called before the first frame update
     void Start()
     {
         isPaused = false;
         isMuted = false;
         ground.scrollSpeed = groundSpeed;
+        SelectNewColor();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        colorTimer += Time.deltaTime;
+        Camera.main.backgroundColor = Color.Lerp(originalColor, targetColor, colorTimer / colorTransitionTime);
+        if (colorTimer >= colorTransitionTime) {
+            SelectNewColor();
+        }
+    }
+
+    private void SelectNewColor() {
+        colorTimer = 0;
+        Color newColor;
+        do {
+            newColor = bgColors[Random.Range(0, bgColors.Length)];
+        } while (newColor == targetColor);
+        originalColor = Camera.main.backgroundColor;
+        targetColor = newColor;
     }
 
     public static void PauseGame() {

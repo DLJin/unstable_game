@@ -8,13 +8,14 @@ public class PlayerCharacter : MonoBehaviour
 
     [Header("Projectile")]
     public GameObject projectile;
+    public Transform spawnPoint;
     public float projectileSpeed = 20.0f;
 
     [Header("Attack")]
-    private float timeSinceLastAttack = 0.0f;
     public float attackSpeed = 5.0f;
     public float baseAttackSpeed = 5.0f;
     public int weaponDamage = 10;
+    private float timeSinceLastAttack = 0.0f;
 
     [Header("Movement")]
     public float movementSpeed = 0.5f;
@@ -30,6 +31,7 @@ public class PlayerCharacter : MonoBehaviour
     public float speedUpPerLevel = 1f;
     public int frequencyUps = 0;
     public float frequencyUpPerLevel = 1f;
+
     [Header("Jumping")]
     public bool onGround = false;
     public bool jumping = false;
@@ -38,11 +40,11 @@ public class PlayerCharacter : MonoBehaviour
     private bool hasGroundedSinceJump = false;
 
     [Header("Sounds")]
-    private AudioSource audioSource;
     public AudioClip[] shootSounds;
     public AudioClip[] hurtSounds;
     public AudioClip[] jumpSounds;
     public AudioClip[] collectSounds;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -65,7 +67,7 @@ public class PlayerCharacter : MonoBehaviour
 
         if (timeSinceLastAttack > 1.0f/(attackSpeed + frequencyUpPerLevel * frequencyUps) && Input.GetKey(KeyCode.Space)) {
             Quaternion rotation = new Quaternion(0, 0, 90, 90);
-            GameObject go = Instantiate(projectile, transform.position, rotation);
+            GameObject go = Instantiate(projectile, spawnPoint.position, rotation);
             go.GetComponent<Projectile>().damage = weaponDamage;
             go.GetComponent<Rigidbody2D>().velocity = Vector3.right * projectileSpeed;
             timeSinceLastAttack = 0.0f;
@@ -79,8 +81,10 @@ public class PlayerCharacter : MonoBehaviour
 
     public void TakeDamage(int dmg = 1) {
         currHealth = Mathf.Clamp(currHealth - dmg, 0, maxHealth);
-        PlaySound(hurtSounds);
-        anim.SetTrigger("Damaged");
+        if (dmg > 0) {
+            PlaySound(hurtSounds);
+            anim.SetTrigger("Damaged");
+        }
         if (currHealth == 0) {
             Debug.LogError("Player is dead!");
             GameManager.EndGame();
