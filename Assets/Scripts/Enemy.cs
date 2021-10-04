@@ -15,10 +15,10 @@ public class Enemy : MonoBehaviour
     }
     [Header("Projectile")]
     public GameObject projectile;
-    public float projectileSpeed = 10.0f;    
+    public float projectileSpeed = 7.5f;
 
     [Header("Attack")]
-    public float attackSpeed = 1f;
+    public float attackSpeed = 1.0f;
     public int weaponDamage = 1;
     private float timeSinceLastAttack = 0.0f;
 
@@ -78,9 +78,8 @@ public class Enemy : MonoBehaviour
         if (type == EnemyType.Normal) {
             return;
         }
-        else if (type == EnemyType.Fast) {
+        else if (type == EnemyType.Fast || type == EnemyType.Heavy) {
             if (timeSinceLastAttack > 1.0f/(attackSpeed)) {
-                Debug.Log("Poggers");
                 Quaternion rotation = new Quaternion(0, 0, 90, 90);
                 GameObject go = Instantiate(projectile, transform.position, rotation);
                 go.GetComponent<EnemyProjectile>().damage = weaponDamage;
@@ -88,7 +87,6 @@ public class Enemy : MonoBehaviour
                 timeSinceLastAttack = 0.0f;
             }
             else {
-                Debug.Log("Froggers");
                 timeSinceLastAttack += Time.deltaTime;
             }
         }
