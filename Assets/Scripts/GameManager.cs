@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     public float timeToSurvive = 10.0f;
     private bool lost = false;
 
+    public float endingSlowFadeTime = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -82,9 +84,9 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SlowDownTime() {
         float slowTimer = 0;
-        while(slowTimer < 2f) {
+        while(slowTimer < endingSlowFadeTime) {
             slowTimer += Time.deltaTime;
-            Time.timeScale = Mathf.Lerp(1, 0.5f, slowTimer / 2f);
+            Time.timeScale = Mathf.Lerp(1, 0.5f, slowTimer / endingSlowFadeTime);
             yield return null;
         }
         yield return null;
