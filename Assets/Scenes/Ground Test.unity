@@ -183,6 +183,7 @@ MonoBehaviour:
   - {r: 0.4245283, g: 0.3331092, b: 0.15779635, a: 1}
   - {r: 0.3455398, g: 0.2568886, b: 0.38679248, a: 1}
   colorTransitionTime: 10
+  endingSlowFadeTime: 1
 --- !u!1 &470599066
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +315,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1530545434323613997, guid: b91eecde1d7cffb4785b367dcf6b3b63, type: 3}
+      propertyPath: scripted
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1530545434323613997, guid: b91eecde1d7cffb4785b367dcf6b3b63, type: 3}
+      propertyPath: scriptFile
+      value: 
+      objectReference: {fileID: 4900000, guid: 03c2847b9dd1b504788cd34264e54aa1, type: 3}
+    - target: {fileID: -1530545434323613997, guid: b91eecde1d7cffb4785b367dcf6b3b63, type: 3}
+      propertyPath: verticalRange
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3840414093776141074, guid: b91eecde1d7cffb4785b367dcf6b3b63, type: 3}
       propertyPath: m_RootOrder
       value: 1
