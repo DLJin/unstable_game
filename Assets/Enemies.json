@@ -25,7 +25,18 @@
   {"timestamp":30.0,"enemyVariant":4,"verticalLocation":-4.0,"angle":0},
   {"timestamp":37.0,"enemyVariant":3,"verticalLocation":2.0,"angle":-15},
   {"timestamp":38.5,"enemyVariant":3,"verticalLocation":-5.0,"angle":30},
+  {"timestamp":39.0,"enemyVariant":6,"verticalLocation":0.0,"angle":0},
   {"timestamp":40.0,"enemyVariant":3,"verticalLocation":4.0,"angle":-30},
   {"timestamp":41.5,"enemyVariant":3,"verticalLocation":1.0,"angle":0},
-  {"timestamp":43.0,"enemyVariant":3,"verticalLocation":-1.0,"angle":15}
+  {"timestamp":43.0,"enemyVariant":3,"verticalLocation":-1.0,"angle":15},
+  {"timestamp":48.0,"enemyVariant":7,"verticalLocation":4.0,"angle":0},
+  {"timestamp":50.0,"enemyVariant":5,"verticalLocation":-5.0,"angle":15},
+  {"timestamp":50.5,"enemyVariant":1,"verticalLocation":-2.0,"angle":15},
+  {"timestamp":51.0,"enemyVariant":5,"verticalLocation":3.0,"angle":-15},
+  {"timestamp":51.5,"enemyVariant":1,"verticalLocation":2.0,"angle":-15},
+  {"timestamp":52.0,"enemyVariant":5,"verticalLocation":-3.0,"angle":15},
+  {"timestamp":52.5,"enemyVariant":1,"verticalLocation":-4.0,"angle":30},
+  {"timestamp":53.0,"enemyVariant":5,"verticalLocation":5.0,"angle":-15},
+  {"timestamp":53.5,"enemyVariant":1,"verticalLocation":4.0,"angle":-30},
+  {"timestamp":55.0,"enemyVariant":7,"verticalLocation":4.0,"angle":0}
 ]}
