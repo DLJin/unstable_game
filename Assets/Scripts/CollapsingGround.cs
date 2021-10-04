@@ -8,9 +8,9 @@ public class CollapsingGround : MonoBehaviour
     public Sprite crackedSprite;
     public GameObject destroyedPlatform;
     [Range(0f, 1f)]
-    public float crackThreshold = 0.75f;
+    public float crackThreshold = 0.1f;
     public bool onlyCrackDuringContact = false;
-    public float lifeTime = 3f;
+    public float lifeTime = 2f;
 
     private bool spriteChanged;
     private bool startCollapse;

@@ -40,6 +40,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6341975865748847486}
     m_Modifications:
+    - target: {fileID: -2340312278722260149, guid: c17ace0b37ad0ba43abc05c0498ac457, type: 3}
+      propertyPath: crackThreshold
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2658228536732711740, guid: c17ace0b37ad0ba43abc05c0498ac457, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -102,6 +106,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6341975865748847486}
     m_Modifications:
+    - target: {fileID: -2340312278722260149, guid: c17ace0b37ad0ba43abc05c0498ac457, type: 3}
+      propertyPath: crackThreshold
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2658228536732711740, guid: c17ace0b37ad0ba43abc05c0498ac457, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -164,6 +172,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6341975865748847486}
     m_Modifications:
+    - target: {fileID: -2340312278722260149, guid: c17ace0b37ad0ba43abc05c0498ac457, type: 3}
+      propertyPath: crackThreshold
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2658228536732711740, guid: c17ace0b37ad0ba43abc05c0498ac457, type: 3}
       propertyPath: m_RootOrder
       value: 0
