@@ -28,6 +28,8 @@ public class PlayerCharacter : MonoBehaviour
     public bool jumping = false;
     public int jumpingFrameCount = 4;
     public int jumpingCurrentFrameCount = 0;
+
+    private bool hasGroundedSinceJump = false;
     
 
     // Start is called before the first frame update
@@ -89,8 +91,9 @@ public class PlayerCharacter : MonoBehaviour
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
 
         // starting to jump
-        if (Input.GetKey(KeyCode.W) && onGround && !jumping) {
+        if (Input.GetKey(KeyCode.W) && hasGroundedSinceJump && !jumping) {
             jumping = true;
+            hasGroundedSinceJump = false;
             anim.SetTrigger("Jumping");
             jumpingCurrentFrameCount = 1;
         }
@@ -150,6 +153,7 @@ public class PlayerCharacter : MonoBehaviour
                     ContactPoint2D contact = collision.GetContact(0);
                     if(Vector3.Dot(contact.normal, Vector3.up) > 0.5) {
                         onGround = true;
+                        hasGroundedSinceJump = true;
                     }
                 }
         } else if (collision.gameObject.GetComponent<Enemy>() != null) {
