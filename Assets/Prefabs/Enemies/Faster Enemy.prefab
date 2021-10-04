@@ -110,7 +110,7 @@ MonoBehaviour:
   - pickup: {fileID: 4560467807092958267, guid: ba18ee118a94e1e48b2f5c836ceecea5, type: 3}
     dropRate: 0.1
   movePattern: 0
-  speed: 6
+  speed: 7
   angle: 0
   waveSpeed: 1.5
   turnSpeed: 4
