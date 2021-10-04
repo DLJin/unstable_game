@@ -106,7 +106,7 @@ MonoBehaviour:
   health: 20
   pickups: []
   movePattern: 0
-  speed: 2
+  speed: 3
   angle: 0
   waveSpeed: 1.5
   turnSpeed: 4
