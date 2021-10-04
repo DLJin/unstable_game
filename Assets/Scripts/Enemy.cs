@@ -72,6 +72,8 @@ public class Enemy : MonoBehaviour
     }
 
     public void shoot() {
+        timeSinceLastAttack += Time.deltaTime;
+
         if (type == EnemyType.Normal) {
             return;
         }
@@ -83,8 +85,14 @@ public class Enemy : MonoBehaviour
                 go.GetComponent<Rigidbody2D>().velocity = Vector3.left * projectileSpeed;
                 timeSinceLastAttack = 0.0f;
             }
-            else {
-                timeSinceLastAttack += Time.deltaTime;
+        }
+        else if (type == EnemyType.Bomber) {
+            if (timeSinceLastAttack > 1.0f/(attackSpeed)) {
+                Quaternion rotation = new Quaternion(0, 0, 90, 90);
+                GameObject go = Instantiate(projectile, transform.position, rotation);
+                go.GetComponent<BomberProjectile>().damage = weaponDamage;
+                go.GetComponent<Rigidbody2D>().velocity = Vector3.down * projectileSpeed;
+                timeSinceLastAttack = 0.0f;
             }
         }
     }
