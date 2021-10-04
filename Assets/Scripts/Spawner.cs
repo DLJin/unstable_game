@@ -21,20 +21,31 @@ public class Spawner : MonoBehaviour
         public int angle;
     }
 
+    [System.Serializable]
+    public struct EnemySpawningScript
+    {
+        public ScriptStep[] steps;
+    }
+
     public int verticalRange = 5;
     [Tooltip("Note: Percentages must sum to 100")]
     public EnemyDistribution[] enemies;
     public bool scripted;
-    public ScriptStep[] script;
+    public TextAsset scriptFile;
     public bool autoSpawn = false;
     public float autoSpawnTimer = 0.0f;
     public float autoSpawnSpeed = 3.0f;
 
     private Vector3 originalPosition;
     private float currentTime;
+    private EnemySpawningScript script;
     private int scriptStep;
 
-    private 
+    private void Awake() {
+        if (scripted) {
+            script = JsonUtility.FromJson<EnemySpawningScript>(scriptFile.text);
+        }
+    }
 
     void Start() {
         currentTime = 0f;
@@ -49,12 +60,12 @@ public class Spawner : MonoBehaviour
         autoSpawnTimer += Time.deltaTime;
 
         if (scripted) {
-            for(; scriptStep < script.Length && script[scriptStep].timestamp < currentTime; ++scriptStep) {
-                transform.position = originalPosition + Vector3.up * script[scriptStep].verticalLocation;
-                EnemyDistribution e = enemies[script[scriptStep].enemyVariant];
+            for(; scriptStep < script.steps.Length && script.steps[scriptStep].timestamp < currentTime; ++scriptStep) {
+                transform.position = originalPosition + Vector3.up * script.steps[scriptStep].verticalLocation;
+                EnemyDistribution e = enemies[script.steps[scriptStep].enemyVariant];
                 GameObject go = Instantiate(e.prefab, transform.position, Quaternion.identity);
                 Enemy enemyConfig = go.GetComponent<Enemy>();
-                enemyConfig.InitializeEnemy(angle: script[scriptStep].angle);
+                enemyConfig.InitializeEnemy(angle: script.steps[scriptStep].angle);
             }
         } else if (autoSpawn && autoSpawnTimer > 1.0f/autoSpawnSpeed) {
             transform.position = originalPosition + Vector3.up * Random.Range(-verticalRange, verticalRange + 1);
@@ -83,15 +94,6 @@ public class Spawner : MonoBehaviour
         }
         if (totalPercentage != 100) {
             Debug.LogError("Enemy distribution percentage sum is should be 100. Currently: " + totalPercentage);
-        }
-
-        for(int i = 1; script != null && i < script.Length; ++i) {
-            if(script[i].timestamp < script[i-1].timestamp) {
-                Debug.LogError("Timestamp issue with step " + i);
-            }
-            if(script[i].enemyVariant >= enemies.Length) {
-                Debug.LogError("Enemy variant issue with step " + i);
-            }
         }
     }
 
