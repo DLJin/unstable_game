@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     private float colorTimer;
     private Color originalColor;
     private Color targetColor;
+    public float timeToSurvive = 10.0f;
+    private bool lost = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +40,11 @@ public class GameManager : MonoBehaviour
         Camera.main.backgroundColor = Color.Lerp(originalColor, targetColor, colorTimer / colorTransitionTime);
         if (colorTimer >= colorTransitionTime) {
             SelectNewColor();
+        }
+
+        timeToSurvive -= Time.deltaTime;
+        if (timeToSurvive < 0.0f) {
+            EndGame(true);
         }
     }
 
@@ -64,9 +71,10 @@ public class GameManager : MonoBehaviour
 
     public void EndGame(bool winner) {
         Debug.LogError("Game Over!");
-        if (winner) {
-
+        if (winner && !lost) {
+            Debug.Log("Player Won!");
         } else {
+            lost = true;
             BGM.PlayOneShot(deathNoise);
         }
         StartCoroutine(SlowDownTime());
