@@ -194,7 +194,11 @@ public class PlayerCharacter : MonoBehaviour
                     onGround = true;
                 }
             }
-        } else if (collision.gameObject.GetComponent<Enemy>() != null) {
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.GetComponent<Enemy>() != null) {
             PlaySound(hurtSounds);
             Destroy(collision.gameObject);
             TakeDamage();

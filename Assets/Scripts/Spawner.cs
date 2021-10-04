@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour
     public ScriptStep[] script;
     public bool autoSpawn = false;
     public float autoSpawnTimer = 0.0f;
-    public float autoSpawnSpeed = 6.0f;
+    public float autoSpawnSpeed = 3.0f;
 
     private Vector3 originalPosition;
     private float currentTime;
