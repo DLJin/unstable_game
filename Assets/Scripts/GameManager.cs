@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public AudioSource BGM;
+    public AudioSource PlayerSFX;
     public PlayerCharacter player;
     public GroundController ground;
 
@@ -33,7 +34,8 @@ public class GameManager : MonoBehaviour
     }
 
     public void MuteGame() {
-        BGM.volume = isMuted? 1 : 0;
+        BGM.volume = isMuted ? 1 : 0;
+        PlayerSFX.volume = isMuted ? 1 : 0;
         isMuted = !isMuted;
     }
 

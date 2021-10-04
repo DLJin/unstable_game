@@ -4,33 +4,45 @@ using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour
 {
+    private Animator anim;
+
+    [Header("Projectile")]
     public GameObject projectile;
     public float projectileSpeed = 20.0f;
 
+    [Header("Attack")]
     private float timeSinceLastAttack = 0.0f;
     public float attackSpeed = 5.0f;
     public float baseAttackSpeed = 5.0f;
+    public int weaponDamage = 10;
+
+    [Header("Movement")]
     public float movementSpeed = 0.5f;
     public float baseMovementSpeed = 0.5f;
     public float maxBaseMovementSpeed = 5f;
 
+    [Header("Health")]
     public int maxHealth = 10;
     public int currHealth = 10;
-    public int weaponDamage = 10;
 
+    [Header("Powerups")]
     public int speedUps = 0;
     public float speedUpPerLevel = 1f;
     public int frequencyUps = 0;
     public float frequencyUpPerLevel = 1f;
-
-    private Animator anim;
+    [Header("Jumping")]
     public bool onGround = false;
     public bool jumping = false;
     public int jumpingFrameCount = 4;
     public int jumpingCurrentFrameCount = 0;
-
     private bool hasGroundedSinceJump = false;
-    
+
+    [Header("Sounds")]
+    private AudioSource audioSource;
+    public AudioClip[] shootSounds;
+    public AudioClip[] hurtSounds;
+    public AudioClip[] jumpSounds;
+    public AudioClip[] collectSounds;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +55,7 @@ public class PlayerCharacter : MonoBehaviour
         onGround = false;
         jumping = false;
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
     
     void FixedUpdate()
@@ -56,6 +69,7 @@ public class PlayerCharacter : MonoBehaviour
             go.GetComponent<Projectile>().damage = weaponDamage;
             go.GetComponent<Rigidbody2D>().velocity = Vector3.right * projectileSpeed;
             timeSinceLastAttack = 0.0f;
+            PlaySound(shootSounds);
         }
         else {
             timeSinceLastAttack += Time.deltaTime;
@@ -65,6 +79,7 @@ public class PlayerCharacter : MonoBehaviour
 
     public void TakeDamage(int dmg = 1) {
         currHealth = Mathf.Clamp(currHealth - dmg, 0, maxHealth);
+        PlaySound(hurtSounds);
         anim.SetTrigger("Damaged");
         if (currHealth == 0) {
             Debug.LogError("Player is dead!");
@@ -92,7 +107,9 @@ public class PlayerCharacter : MonoBehaviour
 
         // starting to jump
         if (Input.GetKey(KeyCode.W) && hasGroundedSinceJump && !jumping) {
+            Debug.Log("Starting Jump [onGround: " + onGround + ", hasGroundedSinceJump: " + hasGroundedSinceJump + ", jumping: " + jumping + "]");
             jumping = true;
+            PlaySound(jumpSounds);
             hasGroundedSinceJump = false;
             anim.SetTrigger("Jumping");
             jumpingCurrentFrameCount = 1;
@@ -112,6 +129,7 @@ public class PlayerCharacter : MonoBehaviour
     }
 
     public void applyPowerup(Pickup.PowerType type) {
+        PlaySound(collectSounds);
         switch(type) {
             case Pickup.PowerType.Heal:
                 TakeDamage(-1);
@@ -145,27 +163,39 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
 
+    public void PlaySound(AudioClip[] sounds) {
+        if (sounds.Length == 0) {
+            return;
+        }
+        int clip = Random.Range(0, sounds.Length);
+        Debug.Log("Playing " + sounds[clip].name);
+        audioSource.PlayOneShot(sounds[clip]);
+    }
+
     void OnCollisionEnter2D(Collision2D collision) {
-        Debug.Log("Collision!");
+        //Debug.Log("Collision!");
 
         if (collision.gameObject.GetComponent<CollapsingGround>() != null) {
-                if(collision.contactCount > 0) {
-                    ContactPoint2D contact = collision.GetContact(0);
-                    if(Vector3.Dot(contact.normal, Vector3.up) > 0.5) {
-                        onGround = true;
+            if(collision.contactCount > 0) {
+                ContactPoint2D contact = collision.GetContact(0);
+                if(Vector3.Dot(contact.normal, Vector3.up) > 0.5) {
+                    if (!onGround) {
                         hasGroundedSinceJump = true;
                     }
+                    onGround = true;
                 }
+            }
         } else if (collision.gameObject.GetComponent<Enemy>() != null) {
+            PlaySound(hurtSounds);
             Destroy(collision.gameObject);
             TakeDamage();
         }
     }
 
     void OnCollisionExit2D(Collision2D collision) {
-        Debug.Log("Exit!");
+        //Debug.Log("Exit!");
         if (collision.gameObject.GetComponent<CollapsingGround>() != null) {
-            Debug.Log("Exit is with something that has CollapsingGround!");
+            //Debug.Log("Exit is with something that has CollapsingGround!");
             onGround = false;
         }
     }
