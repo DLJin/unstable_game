@@ -107,8 +107,16 @@ MonoBehaviour:
   scrollSpeed: 4
   groundBlocks:
   - {fileID: 1117860360434173253, guid: 28c7fb59d41f4db4ebb3d416ac7d341b, type: 3}
+  - {fileID: 6524726744576609496, guid: 5d4a3ba4e7664114581de05ee92960ac, type: 3}
+  - {fileID: 122921477245812462, guid: a9b1a20dbb6e05343ba4c9d369ba265c, type: 3}
   - {fileID: 1812061885351072403, guid: 56a7e493452a4bb4d990f98f435c6fd4, type: 3}
   - {fileID: 6439802401853202399, guid: c32c8c2f86cfb1744be40ded78f1edc0, type: 3}
+  - {fileID: 5942312091547449064, guid: 5190297f1532f0b4282d257b79255928, type: 3}
+  - {fileID: 2382730451354091594, guid: 314312def00582943a729b96b915dc7b, type: 3}
+  - {fileID: 8025672759140406092, guid: 860040990f1fd8145adafc7226bc5e4d, type: 3}
+  - {fileID: 3391253083392909146, guid: aababcc96f8ec8146811f93eacd21a32, type: 3}
+  - {fileID: 6607719612388087361, guid: 155262339088a4745a856f21efca843d, type: 3}
+  - {fileID: 1468132405667802735, guid: 5a4d2ec7939ccca44a912178f4f60806, type: 3}
 --- !u!1 &6732679044477947091
 GameObject:
   m_ObjectHideFlags: 0

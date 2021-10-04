@@ -58,13 +58,17 @@ public class GameManager : MonoBehaviour
 
     public void MuteGame() {
         BGM.volume = isMuted ? 1 : 0;
-        PlayerSFX.volume = isMuted ? 1 : 0;
+        PlayerSFX.volume = isMuted ? 0.15f : 0;
         isMuted = !isMuted;
     }
 
-    public void EndGame() {
-        BGM.PlayOneShot(deathNoise);
+    public void EndGame(bool winner) {
         Debug.LogError("Game Over!");
+        if (winner) {
+
+        } else {
+            BGM.PlayOneShot(deathNoise);
+        }
         StartCoroutine(SlowDownTime());
     }
 

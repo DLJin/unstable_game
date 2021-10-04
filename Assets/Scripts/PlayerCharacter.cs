@@ -81,7 +81,7 @@ public class PlayerCharacter : MonoBehaviour
     }
 
     private void OnDestroy() {
-        gameManager.EndGame();
+        gameManager.EndGame(currHealth <= 0);
     }
 
     public void TakeDamage(int dmg = 1) {
