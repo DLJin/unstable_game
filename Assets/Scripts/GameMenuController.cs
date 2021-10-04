@@ -24,9 +24,13 @@ public class GameMenuController : MonoBehaviour
     [HideInInspector]
     public VisualElement playerAttack;
     [HideInInspector]
+    public VisualElement playerProgress;
+    [HideInInspector]
     public Label flavorText;
 
     public GameManager gameManager;
+
+    private float totalTime;
 
     // Start is called before the first frame update
     void Start()
@@ -42,11 +46,14 @@ public class GameMenuController : MonoBehaviour
         playerHealth = root.Q<VisualElement>("player-health");
         playerSpeed = root.Q<VisualElement>("player-speed");
         playerAttack = root.Q<VisualElement>("player-attack");
+        playerProgress = root.Q<VisualElement>("player-progress");
         flavorText = root.Q<Label>("flavor-text");
 
         startButton.clicked += StartGame;
         pauseButton.clicked += TogglePause;
         muteButton.clicked += ToggleMute;
+
+        totalTime = gameManager.timeToSurvive;
     }
 
     // Update is called once per frame
@@ -55,6 +62,7 @@ public class GameMenuController : MonoBehaviour
         playerHealth.style.width = new StyleLength(Length.Percent(100 * Mathf.Clamp01((float) gameManager.player.currHealth / gameManager.player.maxHealth)));
         playerSpeed.style.width = new StyleLength(Length.Percent(100 * Mathf.Clamp01((float)gameManager.player.speedUps / 3)));
         playerAttack.style.width = new StyleLength(Length.Percent(100 * Mathf.Clamp01((float)gameManager.player.frequencyUps / 3)));
+        playerProgress.style.width = new StyleLength(Length.Percent(100 * Mathf.Clamp01(gameManager.timeToSurvive / totalTime)));
         if (gameManager.isGameOver) {
             endOverlay.style.visibility = Visibility.Visible;
         }

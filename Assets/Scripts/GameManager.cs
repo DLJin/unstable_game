@@ -46,9 +46,11 @@ public class GameManager : MonoBehaviour
             SelectNewColor();
         }
 
-        timeToSurvive -= Time.deltaTime;
-        if (timeToSurvive < 0.0f) {
-            EndGame(true);
+        if (!isGameOver) {
+            timeToSurvive -= Time.deltaTime;
+            if (timeToSurvive < 0.0f) {
+                EndGame(true);
+            }
         }
     }
 
