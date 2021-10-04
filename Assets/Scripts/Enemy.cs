@@ -61,11 +61,8 @@ public class Enemy : MonoBehaviour
         shoot();
     }
 
-    public void InitializeEnemy(MovePattern movePattern, int angle, float speed) {
-        this.movePattern = movePattern;
+    public void InitializeEnemy(int angle) {
         this.angle = angle;
-        this.speed = speed;
-
         StartMovement();
     }
 

@@ -850,10 +850,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground Controller
       objectReference: {fileID: 0}
-    - target: {fileID: 6732679042945898825, guid: 1ccac58b01ba7a140945a46ee98ccf8b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6732679042945898838, guid: 1ccac58b01ba7a140945a46ee98ccf8b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -898,50 +894,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6732679042945898839, guid: 1ccac58b01ba7a140945a46ee98ccf8b, type: 3}
-      propertyPath: groundBlocks.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6732679042945898839, guid: 1ccac58b01ba7a140945a46ee98ccf8b, type: 3}
-      propertyPath: groundBlocks.Array.data[0]
-      value: 
-      objectReference: {fileID: 1117860360434173253, guid: 28c7fb59d41f4db4ebb3d416ac7d341b, type: 3}
-    - target: {fileID: 6732679042945898839, guid: 1ccac58b01ba7a140945a46ee98ccf8b, type: 3}
-      propertyPath: groundBlocks.Array.data[1]
-      value: 
-      objectReference: {fileID: 6524726744576609496, guid: 5d4a3ba4e7664114581de05ee92960ac, type: 3}
-    - target: {fileID: 6732679042945898839, guid: 1ccac58b01ba7a140945a46ee98ccf8b, type: 3}
-      propertyPath: groundBlocks.Array.data[2]
-      value: 
-      objectReference: {fileID: 122921477245812462, guid: a9b1a20dbb6e05343ba4c9d369ba265c, type: 3}
-    - target: {fileID: 6732679042945898839, guid: 1ccac58b01ba7a140945a46ee98ccf8b, type: 3}
-      propertyPath: groundBlocks.Array.data[3]
-      value: 
-      objectReference: {fileID: 1812061885351072403, guid: 56a7e493452a4bb4d990f98f435c6fd4, type: 3}
-    - target: {fileID: 6732679042945898839, guid: 1ccac58b01ba7a140945a46ee98ccf8b, type: 3}
-      propertyPath: groundBlocks.Array.data[4]
-      value: 
-      objectReference: {fileID: 6439802401853202399, guid: c32c8c2f86cfb1744be40ded78f1edc0, type: 3}
-    - target: {fileID: 6732679042945898839, guid: 1ccac58b01ba7a140945a46ee98ccf8b, type: 3}
-      propertyPath: groundBlocks.Array.data[5]
-      value: 
-      objectReference: {fileID: 5942312091547449064, guid: 5190297f1532f0b4282d257b79255928, type: 3}
-    - target: {fileID: 6732679042945898839, guid: 1ccac58b01ba7a140945a46ee98ccf8b, type: 3}
-      propertyPath: groundBlocks.Array.data[6]
-      value: 
-      objectReference: {fileID: 2382730451354091594, guid: 314312def00582943a729b96b915dc7b, type: 3}
-    - target: {fileID: 6732679042945898839, guid: 1ccac58b01ba7a140945a46ee98ccf8b, type: 3}
-      propertyPath: groundBlocks.Array.data[7]
-      value: 
-      objectReference: {fileID: 8025672759140406092, guid: 860040990f1fd8145adafc7226bc5e4d, type: 3}
-    - target: {fileID: 6732679042945898839, guid: 1ccac58b01ba7a140945a46ee98ccf8b, type: 3}
-      propertyPath: groundBlocks.Array.data[8]
-      value: 
-      objectReference: {fileID: 3391253083392909146, guid: aababcc96f8ec8146811f93eacd21a32, type: 3}
-    - target: {fileID: 6732679042945898839, guid: 1ccac58b01ba7a140945a46ee98ccf8b, type: 3}
-      propertyPath: groundBlocks.Array.data[9]
-      value: 
-      objectReference: {fileID: 6607719612388087361, guid: 155262339088a4745a856f21efca843d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ccac58b01ba7a140945a46ee98ccf8b, type: 3}
 --- !u!1001 &7648643677151071915

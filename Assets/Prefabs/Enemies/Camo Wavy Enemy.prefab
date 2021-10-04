@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7540632000911620604
+--- !u!1 &5742505179549635384
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6448331162660952343}
-  - component: {fileID: 8586124617702153050}
-  - component: {fileID: 4685294648440163669}
-  - component: {fileID: 2313132094777551572}
-  - component: {fileID: 7358440646522893017}
+  - component: {fileID: 9109055625813226451}
+  - component: {fileID: 5781711570157285790}
+  - component: {fileID: 7354743760924878737}
+  - component: {fileID: 508110372380033040}
+  - component: {fileID: 4686734401993234461}
   m_Layer: 6
-  m_Name: Fast Enemy
+  m_Name: Camo Wavy Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6448331162660952343
+--- !u!4 &9109055625813226451
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7540632000911620604}
+  m_GameObject: {fileID: 5742505179549635384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.985, y: 0, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
@@ -34,13 +34,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8586124617702153050
+--- !u!212 &5781711570157285790
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7540632000911620604}
+  m_GameObject: {fileID: 5742505179549635384}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 247421465
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9c0fa928d31d5f64dae1a1d25d4a1431, type: 3}
+  m_Sprite: {fileID: 21300000, guid: efdd4a131e1be7c40b15f4ce915020c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,41 +86,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4685294648440163669
+--- !u!114 &7354743760924878737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7540632000911620604}
+  m_GameObject: {fileID: 5742505179549635384}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10a3abdd4d4c68c45a1095d95bd0bda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 4642259060517795408, guid: cd94907f9d737474dbec051ea07944f0, type: 3}
+  projectile: {fileID: 0}
   projectileSpeed: 10
   attackSpeed: 1
   weaponDamage: 1
-  type: 1
-  health: 10
+  type: 3
+  health: 20
   pickups:
-  - pickup: {fileID: 762968970830691174, guid: dad77618dce315f468ada9dc3c08317f, type: 3}
-    dropRate: 0.15
   - pickup: {fileID: 4560467807092958267, guid: ba18ee118a94e1e48b2f5c836ceecea5, type: 3}
-    dropRate: 0.05
-  movePattern: 0
-  speed: 4
+    dropRate: 0.1
+  - pickup: {fileID: 3367534721196778185, guid: 4771d21ca8839074dab640cd7f80af4d, type: 3}
+    dropRate: 0.15
+  movePattern: 1
+  speed: 2
   angle: 0
   waveSpeed: 1.5
   turnSpeed: 4
---- !u!60 &2313132094777551572
+--- !u!60 &508110372380033040
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7540632000911620604}
+  m_GameObject: {fileID: 5742505179549635384}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -130,7 +130,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.56125, y: 0.5}
+    pivot: {x: 0.625, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -187,14 +187,14 @@ PolygonCollider2D:
       - {x: 0.36523438, y: -0.48632812}
       - {x: 0.3671875, y: -0.48046875}
       - {x: 0.3671875, y: 0.484375}
---- !u!50 &7358440646522893017
+--- !u!50 &4686734401993234461
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7540632000911620604}
+  m_GameObject: {fileID: 5742505179549635384}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0

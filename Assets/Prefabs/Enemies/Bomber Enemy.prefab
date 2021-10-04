@@ -98,14 +98,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a3abdd4d4c68c45a1095d95bd0bda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 4642259060517795408, guid: cd94907f9d737474dbec051ea07944f0, type: 3}
+  projectileSpeed: 10
+  attackSpeed: 1
+  weaponDamage: 1
   type: 4
-  health: 20
-  attack: 10
+  health: 30
   pickups:
   - pickup: {fileID: 4560467807092958267, guid: ba18ee118a94e1e48b2f5c836ceecea5, type: 3}
-    dropRate: 0.2
+    dropRate: 0.25
   - pickup: {fileID: 3367534721196778185, guid: 4771d21ca8839074dab640cd7f80af4d, type: 3}
     dropRate: 0.1
+  - pickup: {fileID: 762968970830691174, guid: dad77618dce315f468ada9dc3c08317f, type: 3}
+    dropRate: 0.25
   movePattern: 0
   speed: 2
   angle: 0

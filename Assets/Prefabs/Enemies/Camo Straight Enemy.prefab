@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7442221793037987403
+--- !u!1 &2604375537323160559
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6237681845610761888}
-  - component: {fileID: 8702550185633058029}
-  - component: {fileID: 5685833255826496226}
-  - component: {fileID: 3455462621987339619}
-  - component: {fileID: 7634673770610713966}
+  - component: {fileID: 1584209467093177092}
+  - component: {fileID: 4299011041075204425}
+  - component: {fileID: 974096599729440582}
+  - component: {fileID: 7825224772498743495}
+  - component: {fileID: 3071248044328515786}
   m_Layer: 6
-  m_Name: Normal Enemy
+  m_Name: Camo Straight Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6237681845610761888
+--- !u!4 &1584209467093177092
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7442221793037987403}
+  m_GameObject: {fileID: 2604375537323160559}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.985, y: 0, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
@@ -34,13 +34,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8702550185633058029
+--- !u!212 &4299011041075204425
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7442221793037987403}
+  m_GameObject: {fileID: 2604375537323160559}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 247421465
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7054eee7f8534404288410519a27f860, type: 3}
+  m_Sprite: {fileID: 21300000, guid: efdd4a131e1be7c40b15f4ce915020c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,34 +86,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5685833255826496226
+--- !u!114 &974096599729440582
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7442221793037987403}
+  m_GameObject: {fileID: 2604375537323160559}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10a3abdd4d4c68c45a1095d95bd0bda3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  projectile: {fileID: 0}
+  projectileSpeed: 10
+  attackSpeed: 1
+  weaponDamage: 1
+  type: 3
   health: 20
-  attack: 0
-  pickups: []
+  pickups:
+  - pickup: {fileID: 4560467807092958267, guid: ba18ee118a94e1e48b2f5c836ceecea5, type: 3}
+    dropRate: 0.15
+  - pickup: {fileID: 3367534721196778185, guid: 4771d21ca8839074dab640cd7f80af4d, type: 3}
+    dropRate: 0.15
   movePattern: 0
   speed: 2
   angle: 0
   waveSpeed: 1.5
   turnSpeed: 4
---- !u!60 &3455462621987339619
+--- !u!60 &7825224772498743495
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7442221793037987403}
+  m_GameObject: {fileID: 2604375537323160559}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -180,14 +187,14 @@ PolygonCollider2D:
       - {x: 0.36523438, y: -0.48632812}
       - {x: 0.3671875, y: -0.48046875}
       - {x: 0.3671875, y: 0.484375}
---- !u!50 &7634673770610713966
+--- !u!50 &3071248044328515786
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7442221793037987403}
+  m_GameObject: {fileID: 2604375537323160559}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0

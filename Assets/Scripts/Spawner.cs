@@ -8,10 +8,8 @@ public class Spawner : MonoBehaviour
     public struct EnemyDistribution
     {
         public GameObject prefab;
-        public Enemy.MovePattern movePattern;
         [Range(0, 101)]
         public int percentage;
-        public int minSpeed, maxSpeed;
     }
 
     [System.Serializable]
@@ -21,7 +19,6 @@ public class Spawner : MonoBehaviour
         public int enemyVariant;
         public float verticalLocation;
         public int angle;
-        public int speed;
     }
 
     public int verticalRange = 5;
@@ -57,7 +54,7 @@ public class Spawner : MonoBehaviour
                 EnemyDistribution e = enemies[script[scriptStep].enemyVariant];
                 GameObject go = Instantiate(e.prefab, transform.position, Quaternion.identity);
                 Enemy enemyConfig = go.GetComponent<Enemy>();
-                enemyConfig.InitializeEnemy(movePattern: e.movePattern, angle: script[scriptStep].angle, speed: script[scriptStep].speed);
+                enemyConfig.InitializeEnemy(angle: script[scriptStep].angle);
             }
         } else if (autoSpawn && autoSpawnTimer > 1.0f/autoSpawnSpeed) {
             transform.position = originalPosition + Vector3.up * Random.Range(-verticalRange, verticalRange + 1);
@@ -69,7 +66,7 @@ public class Spawner : MonoBehaviour
                 if (enemySelection < totalPercentage) {
                     GameObject go = Instantiate(e.prefab, transform.position, Quaternion.identity);
                     Enemy enemyConfig = go.GetComponent<Enemy>();
-                    enemyConfig.InitializeEnemy(movePattern: e.movePattern, angle: Random.Range(-2, 3) * 15, speed: Random.Range(e.minSpeed, e.maxSpeed + 1));
+                    enemyConfig.InitializeEnemy(angle: Random.Range(-2, 3) * 15);
                     break;
                 }
             }

@@ -46,45 +46,21 @@ MonoBehaviour:
   verticalRange: 5
   enemies:
   - prefab: {fileID: 7442221793037987403, guid: fc6e8f3507d955c4a9efaead459f9286, type: 3}
-    movePattern: 0
     percentage: 20
-    minSpeed: 2
-    maxSpeed: 4
-  - prefab: {fileID: 7442221793037987403, guid: fc6e8f3507d955c4a9efaead459f9286, type: 3}
-    movePattern: 1
+  - prefab: {fileID: 6763969389352659365, guid: 907bfcb49128fbc4281291b8bb058eef, type: 3}
     percentage: 10
-    minSpeed: 2
-    maxSpeed: 3
   - prefab: {fileID: 7540632000911620604, guid: fdecfc64f13298e4b9f49326edbaa2b7, type: 3}
-    movePattern: 0
     percentage: 20
-    minSpeed: 4
-    maxSpeed: 8
-  - prefab: {fileID: 7540632000911620604, guid: fdecfc64f13298e4b9f49326edbaa2b7, type: 3}
-    movePattern: 1
+  - prefab: {fileID: 600204563869544379, guid: 3006385c668e77243826ce03bdefe3fa, type: 3}
     percentage: 10
-    minSpeed: 4
-    maxSpeed: 6
   - prefab: {fileID: 2097317260470316653, guid: afddbf4c3fc8fe142a6eacfa36bdb1b4, type: 3}
-    movePattern: 0
     percentage: 15
-    minSpeed: 1
-    maxSpeed: 2
   - prefab: {fileID: 2604375537323160559, guid: 90d50eb632c0074469e0b81e001e7e88, type: 3}
-    movePattern: 0
-    percentage: 15
-    minSpeed: 1
-    maxSpeed: 4
-  - prefab: {fileID: 2604375537323160559, guid: 90d50eb632c0074469e0b81e001e7e88, type: 3}
-    movePattern: 1
-    percentage: 5
-    minSpeed: 2
-    maxSpeed: 3
+    percentage: 10
+  - prefab: {fileID: 5742505179549635384, guid: 64a5a24968222a645992062af0404688, type: 3}
+    percentage: 10
   - prefab: {fileID: 3653625565247034170, guid: f5166fe7325b61949a863df8d6576127, type: 3}
-    movePattern: 0
     percentage: 5
-    minSpeed: 2
-    maxSpeed: 4
   scripted: 0
   script: []
   autoSpawn: 0
