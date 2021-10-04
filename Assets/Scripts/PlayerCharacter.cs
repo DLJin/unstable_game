@@ -36,9 +36,8 @@ public class PlayerCharacter : MonoBehaviour
     [Header("Jumping")]
     public bool onGround = false;
     public bool jumping = false;
-    public int jumpingFrameCount = 4;
+    public int jumpingFrameCount = 5;
     public int jumpingCurrentFrameCount = 0;
-    private bool hasGroundedSinceJump = false;
 
     [Header("Sounds")]
     public AudioClip[] shootSounds;
@@ -59,6 +58,10 @@ public class PlayerCharacter : MonoBehaviour
         jumping = false;
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+    }
+
+    void Update() {
+
     }
     
     void FixedUpdate()
@@ -115,11 +118,10 @@ public class PlayerCharacter : MonoBehaviour
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
 
         // starting to jump
-        if (Input.GetKey(KeyCode.W) && hasGroundedSinceJump && !jumping) {
-            Debug.Log("Starting Jump [onGround: " + onGround + ", hasGroundedSinceJump: " + hasGroundedSinceJump + ", jumping: " + jumping + "]");
+        if (Input.GetKey(KeyCode.W) && onGround && !jumping) {
+            Debug.Log("Starting Jump [onGround: " + onGround + ", jumping: " + jumping + "]");
             jumping = true;
             PlaySound(jumpSounds);
-            hasGroundedSinceJump = false;
             anim.SetTrigger("Jumping");
             jumpingCurrentFrameCount = 1;
         }
@@ -188,9 +190,6 @@ public class PlayerCharacter : MonoBehaviour
             if(collision.contactCount > 0) {
                 ContactPoint2D contact = collision.GetContact(0);
                 if(Vector3.Dot(contact.normal, Vector3.up) > 0.5) {
-                    if (!onGround) {
-                        hasGroundedSinceJump = true;
-                    }
                     onGround = true;
                 }
             }

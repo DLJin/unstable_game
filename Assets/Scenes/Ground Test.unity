@@ -846,6 +846,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 192510630}
+    - target: {fileID: 5161422206787516657, guid: 711586c061433de43afeed7089daaa40, type: 3}
+      propertyPath: jumpingFrameAllowance
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5161422206787516660, guid: 711586c061433de43afeed7089daaa40, type: 3}
       propertyPath: m_Name
       value: Player
