@@ -183,7 +183,8 @@ MonoBehaviour:
   - {r: 0.4245283, g: 0.3331092, b: 0.15779635, a: 1}
   - {r: 0.3455398, g: 0.2568886, b: 0.38679248, a: 1}
   colorTransitionTime: 10
-  timeToSurvive: 120
+  timeToSurvive: 100
+  lost: 0
   isGameOver: 0
   endingSlowFadeTime: 0.75
 --- !u!1 &470599066
@@ -762,6 +763,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323ace807db63ae4f93bae129518016a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winText: Congratulations, you survived the invasion! The robot will live to see
+    another day!
+  loseText: Oh no! The invaders won this time...
   gameManager: {fileID: 192510630}
 --- !u!114 &1489058797
 MonoBehaviour:
@@ -810,7 +814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5161422206787516656, guid: 711586c061433de43afeed7089daaa40, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.53
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5161422206787516656, guid: 711586c061433de43afeed7089daaa40, type: 3}
       propertyPath: m_LocalPosition.z

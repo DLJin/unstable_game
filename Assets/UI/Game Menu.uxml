@@ -33,7 +33,8 @@
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="start-overlay" style="position: absolute; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.77); align-items: center; justify-content: center;">
+    <ui:VisualElement name="start-overlay" style="position: absolute; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.85); align-items: center; justify-content: center;">
+        <ui:Label text="Rapid Robot" display-tooltip-when-elided="true" name="Title" style="position: relative; top: auto; margin-bottom: 20px; font-size: 50%; -unity-font-style: bold;" />
         <ui:Label text="The space station is on siege from an onslaught of oddly geometrically shaped invaders! Navigate the robot through its collapsing home and defend it against the attackers!" display-tooltip-when-elided="true" name="Synopsis" style="-unity-font-style: normal; font-size: 30%; -unity-text-align: middle-center; flex-wrap: nowrap; width: 60%; white-space: normal;" />
         <ui:Button text="Beep Boop!" display-tooltip-when-elided="true" name="start-button" class="game-menu-button" style="width: auto; height: auto; font-size: 16%;" />
         <ui:VisualElement>
@@ -94,7 +95,7 @@
                 </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement style="position: absolute; bottom: 0; width: 100%; align-items: center; flex-direction: row; justify-content: center; margin-bottom: 1%;">
+        <ui:VisualElement name="Footer" style="position: absolute; bottom: 0; width: 100%; align-items: center; flex-direction: row; justify-content: center; margin-bottom: 1%;">
             <ui:VisualElement style="background-image: url(&apos;/Assets/Sprites/SigmanZero Avatar.png#SigmanZero Avatar&apos;); width: 64px; height: 64px;" />
             <ui:Label text="Created by SigmanZero and Silversmight for Ludum Dare 49" display-tooltip-when-elided="true" style="position: relative; bottom: auto; left: auto; font-size: 20%; margin-right: 2%; margin-left: 2%;" />
             <ui:VisualElement style="background-image: url(&apos;/Assets/Sprites/Silversmight Avatar.png#Silversmight Avatar&apos;); width: 64px; height: 64px;" />

@@ -1,10 +1,14 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class GameMenuController : MonoBehaviour
 {
+    public string winText = "Congratulations, you survived the invasion! The robot will live to see another day!";
+    public string loseText = "Oh no! The invaders won this time...";
+
     [HideInInspector]
     public Button startButton;
     [HideInInspector]
@@ -52,6 +56,7 @@ public class GameMenuController : MonoBehaviour
         startButton.clicked += StartGame;
         pauseButton.clicked += TogglePause;
         muteButton.clicked += ToggleMute;
+        replayButton.clicked += RestartGame;
 
         totalTime = gameManager.timeToSurvive;
     }
@@ -65,6 +70,10 @@ public class GameMenuController : MonoBehaviour
         playerProgress.style.width = new StyleLength(Length.Percent(100 * Mathf.Clamp01(gameManager.timeToSurvive / totalTime)));
         if (gameManager.isGameOver) {
             endOverlay.style.visibility = Visibility.Visible;
+            flavorText.text = gameManager.lost ? loseText : winText;
+            if (!gameManager.lost && gameManager.player == null) {
+                flavorText.text = winText + " ... oops";
+            }
         }
     }
 
@@ -74,7 +83,7 @@ public class GameMenuController : MonoBehaviour
     }
 
     private void RestartGame() {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void TogglePause() {

@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     private Color originalColor;
     private Color targetColor;
     public float timeToSurvive = 10.0f;
-    private bool lost = false;
+    public bool lost = false;
     public bool isGameOver;
 
     public float endingSlowFadeTime = 1f;
