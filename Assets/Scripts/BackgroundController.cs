@@ -19,6 +19,9 @@ public class BackgroundController : MonoBehaviour
 
     void Update()
     {
+        if (player == null) {
+            return;
+        }
         float xSpeed = player.velocity.x + ground.scrollSpeed;
 
         foreach(GameObject f in far) {

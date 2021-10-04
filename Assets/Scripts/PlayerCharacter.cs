@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerCharacter : MonoBehaviour
 {
     private Animator anim;
+    public GameManager gameManager;
 
     [Header("Projectile")]
     public GameObject projectile;
@@ -79,6 +80,10 @@ public class PlayerCharacter : MonoBehaviour
 
     }
 
+    private void OnDestroy() {
+        gameManager.EndGame();
+    }
+
     public void TakeDamage(int dmg = 1) {
         currHealth = Mathf.Clamp(currHealth - dmg, 0, maxHealth);
         if (dmg > 0) {
@@ -87,7 +92,7 @@ public class PlayerCharacter : MonoBehaviour
         }
         if (currHealth == 0) {
             Debug.LogError("Player is dead!");
-            GameManager.EndGame();
+            Destroy(gameObject);
         }
     }
 

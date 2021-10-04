@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public AudioSource BGM;
+    public AudioClip deathNoise;
     public AudioSource PlayerSFX;
     public PlayerCharacter player;
     public GroundController ground;
@@ -61,8 +62,19 @@ public class GameManager : MonoBehaviour
         isMuted = !isMuted;
     }
 
-    public static void EndGame() {
+    public void EndGame() {
+        BGM.PlayOneShot(deathNoise);
         Debug.LogError("Game Over!");
-        PauseGame();
+        StartCoroutine(SlowDownTime());
+    }
+
+    IEnumerator SlowDownTime() {
+        float slowTimer = 0;
+        while(slowTimer < 2f) {
+            slowTimer += Time.deltaTime;
+            Time.timeScale = Mathf.Lerp(1, 0.5f, slowTimer / 2f);
+            yield return null;
+        }
+        yield return null;
     }
 }
