@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
 
     public void MuteGame() {
         BGM.volume = isMuted ? 1 : 0;
-        PlayerSFX.volume = isMuted ? 1 : 0;
+        PlayerSFX.volume = isMuted ? 0.15f : 0;
         isMuted = !isMuted;
     }
 
